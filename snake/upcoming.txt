@@ -1,9 +1,7 @@
 This file describes planned additions and updates as well as general priority levels for said updates.
 
  === Short-Term (Or coming Soon). Working updates that make these changes will be approved immediately. === 
-- Add option to turn off mario_death playback upon ending game without a highscore.
-- Add sound (and toggle thereof) for ending game with a new highscore.
-- Add feature to recall previous settings and either autofill them into the settings fields or provide a reminder of previous settings (copy/pastable).
+- Add option to turn off mario_death and new_highscore playbacks upon triggering.
 
 
  === Long-Term (Or low-priority). Updates that will come but do not greatly affect user experience. === 
