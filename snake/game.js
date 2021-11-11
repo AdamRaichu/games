@@ -7,6 +7,7 @@ function playSnake() {
   //Define the burp file and the mario_death file.
   var burp = document.getElementById("burpAudio");
   var death = document.getElementById("mario_deathAudio");
+  var newHigh = document.getElementById("new_highscoreAudio");
   
   //Hide the start button to prevent duplicate "ghost" snakes by multiple clicks of button.
   var start = document.getElementById("buttonStart");
@@ -58,7 +59,7 @@ function playSnake() {
       highscore = score
       localStorage.setItem("highscore", highscore)
       alert("You got a new highscore with a score of " + score)
-      //Add a sound to play instead of mario_death
+      newHigh.play()
     } else {
       death.play()
     }
