@@ -58,8 +58,8 @@ function playSnake() {
     if(score > highscore) {
       highscore = score
       localStorage.setItem("highscore", highscore)
-      alert("You got a new highscore with a score of " + score)
       newHigh.play()
+      alert("You got a new highscore with a score of " + score)
     } else {
       death.play()
     }
