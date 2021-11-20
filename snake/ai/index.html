@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- About the page -->
+		<title>Snake by AdamRaichu | AI</title>
+		<meta name="description" content="Watch the AI play or rewatch one of your own games.">
+		<meta name="keywords" content="Snake, Game, AI, Replay">
+		<meta name="author" content="AdamRaichu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- JQuery --> 
+		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+		<!-- My own code -->
+		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/index.css">
+		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/global.css">
+		<script src="https://adamraichu.github.io/games/snake/ai/playback.js"></script>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="https://adamraichu.github.io/games/snake/images/logo48x48.png">
+	</head>
+
+	<body>
+		<div class="site-header" style="background-color: green;">
+      <a style="color: black;" href="https://adamraichu.github.io/games/snake">GAME</a>
+			<a style="color: black;" href="https://adamraichu.github.io/games/snake/history">HISTORY</a>
+			<a style="color: black;" href="https://adamraichu.github.io/games/snake/settings">SETTINGS</a>
+		</div>
+		<div class="center">
+			<canvas id="canvas" width="400" height="400"></canvas>
+			<br>
+		</div>
+		<div class="center">
+			<button onclick="playSnake()" class="myButton" id="buttonStart" style="display: inline;">Start</button>
+		</div>
+		<div id="audio">
+			<audio id="burpAudio">
+				<source src="https://adamraichu.github.io/games/snake/sounds/burp.ogg">
+				Your browser does not support this audio element (burp sound).
+			</audio>
+			<audio id="mario_deathAudio">
+				<source src="https://adamraichu.github.io/games/snake/sounds/mario_death.wav">
+				Your browser does not support this audio element (death sound).
+			</audio>
+			<audio id="new_highscoreAudio">
+				<source src="https://adamraichu.github.io/games/snake/sounds/new_highscore.wav">
+				You browser does not support this audio element (new highscore sound).
+			</audio>
+		</div>
+		<script src="https://adamraichu.github.io/games/snake/global.js"></script>
+	</body>
+
+</html>
