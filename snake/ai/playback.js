@@ -3,6 +3,7 @@ function playSnake() {
 
   var l = 0
   var m = 0
+  var moves = []
   
   //Get the highscore. If nothing is stored, it returns null. (3 > null) returns true.
   var highscore = localStorage.getItem("highscore")
