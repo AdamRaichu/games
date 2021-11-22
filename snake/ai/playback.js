@@ -1,12 +1,9 @@
 //This code (although based off of a project from a learn to code book) was written by AdamRaichu
-function playSnake() {
-
-  var l = 0
-  var m = 0
-  var moves = []
+function playback() {
   
-  //Get the highscore. If nothing is stored, it returns null. (3 > null) returns true.
-  var highscore = localStorage.getItem("highscore")
+  var moves = JSON.parse(localStorage.getItem("moves"))
+  var apples = JSON.parse(localStorage.getItem("apples"))
+  var l, m = 0
   
   //Define the burp file and the mario_death file.
   var burp = document.getElementById("burpAudio");
@@ -120,12 +117,7 @@ function playSnake() {
     this.direction = "right";
     this.nextDirection = "right";
   };
-  
-  Snake.prototype.test = function () {
-    this.nextDirection = moves[l]
-    l++
-  }
-  
+
   // Draw a square for each segment of the snake's body
   Snake.prototype.draw = function() {
     for (var i = 0; i < this.segments.length; i++) {
@@ -135,14 +127,12 @@ function playSnake() {
 
   // Create a new head and add it to the beginning of 
   // the snake to move the snake in its current direction
-  Snake.prototype.move = function() {
+  Snake.prototype = function() {
     var head = this.segments[0];
     var newHead;
-    
-    this.nextDirection = moves[l]
+
+    this.direction = moves[l]
     l++
-    
-    this.direction = this.nextDirection;
 
     if (this.direction === "right") {
       newHead = new Block(head.col + 1, head.row);
@@ -220,8 +210,8 @@ function playSnake() {
   //Move the apple to a new random location
   Apple.prototype.move = function() {
     var randomCol = apples[m].col
-    var randomRow = apples[m].row
-    m++
+  var randomRow = apples[m].row
+  m++
     this.position = new Block(randomCol, randomRow);
   };
 
