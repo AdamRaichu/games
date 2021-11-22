@@ -127,7 +127,7 @@ function playback() {
 
   // Create a new head and add it to the beginning of 
   // the snake to move the snake in its current direction
-  Snake.prototype = function() {
+  Snake.prototype.move = function() {
     var head = this.segments[0];
     var newHead;
 
