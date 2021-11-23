@@ -2,7 +2,7 @@
 function playback() {
   
   //Check to make sure there is a file to read.
-  if (localStorage.apples || localStorage.moves === undefined) {
+  if (localStorage.apples === undefined || localStorage.moves === undefined) {
     alert("You can't playback a file if you haven't played before.")
     return
   }
