@@ -1,6 +1,12 @@
 //This code (although based off of a project from a learn to code book) was written by AdamRaichu
 function playback() {
   
+  //Check to make sure there is a file to read.
+  if (localStorage.apples || localStorage.moves === undefined) {
+    alert("You can't playback a file if you haven't played before.")
+    return
+  }
+  
   var moves = JSON.parse(localStorage.getItem("moves"))
   var apples = JSON.parse(localStorage.getItem("apples"))
   var l = 0
