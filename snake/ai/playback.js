@@ -3,7 +3,8 @@ function playback() {
   
   var moves = JSON.parse(localStorage.getItem("moves"))
   var apples = JSON.parse(localStorage.getItem("apples"))
-  var l, m = 0
+  var l = 0
+  var m = 0
   
   //Define the burp file and the mario_death file.
   var burp = document.getElementById("burpAudio");
