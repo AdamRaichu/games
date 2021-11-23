@@ -157,22 +157,7 @@ function playback() {
 
   // Check if the snake's new head has collided with the wall or itself
   Snake.prototype.checkCollision = function(head) {
-    var leftCollision = (window.head.col === 0);
-    var topCollision = (window.head.row === 0);
-    var rightCollision = (window.head.col === widthInBlocks - 1);
-    var bottomCollision = (window.head.row === heightInBlocks - 1);
-
-    var wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
-
-    var selfCollision = false;
-
-    for (var i = 0; i < this.segments.length; i++) {
-      if (window.head.equal(this.segments[i])) {
-        selfCollision = true;
-      }
-    }
-
-    return wallCollision || selfCollision;
+    return l === moves.length
   };
 
   // Set the snake's next direction based on the keyboard
