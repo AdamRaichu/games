@@ -14,7 +14,8 @@ function playSnake() {
   
   //Hide the start button to prevent duplicate "ghost" snakes by multiple clicks of button.
   var start = document.getElementById("buttonStart");
-  start.style.display = "none";
+  var buttons = document.getElementById("buttons");
+  buttons.style.display = "none";
   
   // Set up canvas
   var canvas = document.getElementById("canvas")
@@ -66,7 +67,7 @@ function playSnake() {
     } else {
       death.play()
     }
-    start.style.display = "inline";
+    buttons.style.display = "inline";
     start.innerHTML = "Play Again";
     localStorage.setItem("moves", JSON.stringify(moves))
     localStorage.setItem("apples", JSON.stringify(apples))
