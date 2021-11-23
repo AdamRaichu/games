@@ -57,14 +57,6 @@ function playback() {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("Game Over", width / 2, height / 2);
-    if(score > highscore) {
-      highscore = score
-      localStorage.setItem("highscore", highscore)
-      newHigh.play()
-      alert("You got a new highscore with a score of " + score)
-    } else {
-      death.play()
-    }
     start.style.display = "inline";
     start.innerHTML = "Play Again";
   };
@@ -129,7 +121,7 @@ function playback() {
   // Create a new head and add it to the beginning of 
   // the snake to move the snake in its current direction
   Snake.prototype.move = function() {
-    var head = this.segments[0];
+    window.head = this.segments[0];
     var newHead;
 
     this.direction = moves[l]
@@ -165,17 +157,17 @@ function playback() {
 
   // Check if the snake's new head has collided with the wall or itself
   Snake.prototype.checkCollision = function(head) {
-    var leftCollision = (head.col === 0);
-    var topCollision = (head.row === 0);
-    var rightCollision = (head.col === widthInBlocks - 1);
-    var bottomCollision = (head.row === heightInBlocks - 1);
+    var leftCollision = (window.head.col === 0);
+    var topCollision = (window.head.row === 0);
+    var rightCollision = (window.head.col === widthInBlocks - 1);
+    var bottomCollision = (window.head.row === heightInBlocks - 1);
 
     var wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
 
     var selfCollision = false;
 
     for (var i = 0; i < this.segments.length; i++) {
-      if (head.equal(this.segments[i])) {
+      if (window.head.equal(this.segments[i])) {
         selfCollision = true;
       }
     }
