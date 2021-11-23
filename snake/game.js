@@ -1,6 +1,9 @@
 //This code (although based off of a project from a learn to code book) was written by AdamRaichu
 function playSnake() {
   
+  var moves = []
+  var apples = []
+  
   //Get the highscore. If nothing is stored, it returns null. (3 > null) returns true.
   var highscore = localStorage.getItem("highscore")
   
@@ -65,6 +68,8 @@ function playSnake() {
     }
     start.style.display = "inline";
     start.innerHTML = "Play Again";
+    localStorage.setItem("moves", JSON.stringify(moves))
+    localStorage.setItem("apples", JSON.stringify(apples))
   };
 
   // Draw a circle (using the function from Chapter 14)
@@ -131,6 +136,8 @@ function playSnake() {
     var newHead;
 
     this.direction = this.nextDirection;
+    
+    moves.push(this.direction)
 
     if (this.direction === "right") {
       newHead = new Block(head.col + 1, head.row);
@@ -210,6 +217,7 @@ function playSnake() {
     var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1;
     var randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
     this.position = new Block(randomCol, randomRow);
+    apples.push(this.position)
   };
 
   // Create the snake and apple ojects
