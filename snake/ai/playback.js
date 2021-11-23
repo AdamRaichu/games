@@ -64,7 +64,7 @@ function playback() {
     ctx.textBaseline = "middle";
     ctx.fillText("Game Over", width / 2, height / 2);
     start.style.display = "inline";
-    start.innerHTML = "Play Again";
+    start.innerHTML = "Watch Again";
   };
 
   // Draw a circle (using the function from Chapter 14)
