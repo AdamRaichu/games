@@ -8,17 +8,17 @@ function playSnake() {
   var highscore = localStorage.getItem("highscore")
   
   //Define the burp file and the mario_death file.
-  var burp = document.getElementById("burpAudio");
-  var death = document.getElementById("mario_deathAudio");
-  var newHigh = document.getElementById("new_highscoreAudio");
+  var burp = AR.id("burpAudio");
+  var death = AR.id("mario_deathAudio");
+  var newHigh = AR.id("new_highscoreAudio");
   
   //Hide the start button to prevent duplicate "ghost" snakes by multiple clicks of button.
-  var start = document.getElementById("buttonStart");
-  var buttons = document.getElementById("buttons");
+  var start = AR.id("buttonStart");
+  var buttons = AR.id("buttons");
   buttons.style.display = "none";
   
   // Set up canvas
-  var canvas = document.getElementById("canvas")
+  var canvas = AR.id("canvas")
   var ctx = canvas.getContext("2d");
 
   // Get the width and height from the canvas element
