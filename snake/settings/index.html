@@ -40,9 +40,10 @@
 					localStorage.setItem("userPlayBurp", userPlayBurp);
 					//Alert the user that the form was submitted.
 					alert("Your preferences have been saved.")
+					location.reload()
 				}
 			</script>
-			<p> Any blank fields are reset to defaults. Your previous choices should show up as options, but be careful when saving. </p>
+			<p> Any blank fields are reset to defaults. Your current choices should show up as options, but be careful when saving. </p>
 			<label for="userColorBgInput"> What color would you like the site's background to be? </label>
 			<input list="userColorBgInputList" name="userColorBgInput" id="userColorBgInput">
 				<datalist id="userColorBgInputList">
