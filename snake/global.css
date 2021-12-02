@@ -56,6 +56,18 @@
 	text-align: center;
 }
 
+.overlay {
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 0, 0);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 50;
+	opacity: 0.6;
+	display: block;
+}
+
 /* elements */
 
 body {
