@@ -126,7 +126,12 @@ function playSnake() {
   // Draw a square for each segment of the snake's body
   Snake.prototype.draw = function() {
     for (var i = 0; i < this.segments.length; i++) {
-      this.segments[i].drawSquare("Blue");
+      if (i === 0) {
+        var snakeColor = "yellowgreen"
+      } else {
+        var snakeColor = "blue" 
+      }
+      this.segments[i].drawSquare(snakeColor);
     }
   };
 
