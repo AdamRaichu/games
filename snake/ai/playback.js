@@ -7,8 +7,8 @@ function playback() {
     return
   }
   
-  var moves = JSON.parse(localStorage.getItem("moves"))
-  var apples = JSON.parse(localStorage.getItem("apples"))
+  var moves = localStorage.getVar("moves"))
+  var apples = localStorage.getVar("apples"))
   var l = 0
   var m = 0
   
@@ -120,7 +120,12 @@ function playback() {
   // Draw a square for each segment of the snake's body
   Snake.prototype.draw = function() {
     for (var i = 0; i < this.segments.length; i++) {
-      this.segments[i].drawSquare("Blue");
+      if (i === 0) {
+        var snakeColor = "yellowgreen"
+      } else {
+        var snakeColor = "blue" 
+      }
+      this.segments[i].drawSquare(snakeColor);
     }
   };
 
