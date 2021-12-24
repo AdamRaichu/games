@@ -7,8 +7,8 @@ function playback() {
     return
   }
   
-  var moves = localStorage.getVar("moves"))
-  var apples = localStorage.getVar("apples"))
+  var moves = localStorage.getVar("moves")
+  var apples = localStorage.getVar("apples")
   var l = 0
   var m = 0
   
