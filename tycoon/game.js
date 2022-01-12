@@ -17,6 +17,5 @@ var buttons = {
   click: document.getElementById("buttons:click")
 }
 
-setInterval(Game.update(), 1000)
-
 var Game = new GAME()
+setInterval(Game.update(), 1000)
