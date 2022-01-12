@@ -18,3 +18,5 @@ var buttons = {
 }
 
 setInterval(Game.update(), 1000)
+
+var Game = new GAME()
