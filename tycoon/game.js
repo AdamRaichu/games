@@ -8,7 +8,7 @@ var GAME = function () {
 }
 
 GAME.prototype.update = function() {
-  document.getElementById("status_counter").innerText = this.currency
+  document.getElementById("status_counter").innerHTML = this.currency
   localStorage.setVar("currency", this.currency)
 }
 
