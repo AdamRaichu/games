@@ -1,18 +1,21 @@
 //  /tycoon/game.js
 var GAME = function () {
-  this.currency = 100
-  this.playerName = prompt("Choose a username.")
+  if (localStorage.currency) {
+    this.currency = localStorage.getVar("currency")
+  } else {
+    this.currency = 100
+  }
 }
 
 GAME.prototype.update = function() {
-  counter.innerText = this.currency
+  document.getElementById("status_counter").innerText = this.currency
+  localStorage.setVar("currency", this.currency)
 }
 
 GAME.prototype.earn = function (amount) {
   this.currency += amount
 }
 
-var counter = document.getElementById("status_counter")
 var buttons = {
   click: document.getElementById("buttons:click")
 }
