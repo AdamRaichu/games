@@ -21,3 +21,4 @@ var buttons = {
 }
 
 var Game = new GAME()
+Game.update()
