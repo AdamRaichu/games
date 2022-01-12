@@ -18,7 +18,7 @@ GAME.prototype.earn = function (amount) {
 }
 
 var buttons = {
-  click: document.getElementById("buttons:click")
+  click: document.getElementById("buttons_click")
 }
 
 var Game = new GAME()
