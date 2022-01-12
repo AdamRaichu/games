@@ -21,4 +21,3 @@ var buttons = {
 }
 
 var Game = new GAME()
-setInterval(Game.update(), 1000)
