@@ -11,3 +11,9 @@ body {
   margin-left: 100px;
   margin-top: 30px;
 }
+
+#buttons_buy1 {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: 75px;
+}
