@@ -8,8 +8,8 @@
   <body>
     <p class="header_status_currency">You have <span id="status_counter">x</span> currency.</p>
     <hr>
-    <button id="buttons_click" onclick="Game.earn(1); Game.update()" tabindex="-1">Click for cash.</button>
-    <button id="buttons_buy1" data-owned="false">innerText</button>
+    <button id="buttons_click" onclick="Game.clickEvents.default(); Game.update(); this.blur()" tabindex="-1">Click for cash.</button>
+    <button id="buttons_buy1" data-owned="false" onclick="Game.clickEvents.buy1(); Game.update(); this.blur()">Cost: 100</button>
     
     <script src="game.js"></script>
   </body>
