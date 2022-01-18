@@ -50,7 +50,7 @@ var buttons = {
   buy1: document.getElementById("buttons_buy1")
 }
 
-Game.prototype.lackOfFunds = function () {
+GAME.prototype.lackOfFunds = function () {
   //
 }
 
