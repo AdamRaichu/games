@@ -34,6 +34,7 @@ var GAME = function () {
 GAME.prototype.update = function() {
   document.getElementById("status_counter").innerHTML = this.currency
   localStorage.setVar("currency", this.currency)
+  localStorage.setVar("buttons_buy1_owned", buttons.buy1.dataset.owned)
 }
 
 GAME.prototype.earn = function (amount) {
