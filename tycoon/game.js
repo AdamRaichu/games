@@ -29,6 +29,10 @@ var GAME = function () {
       }
     }
   }
+  buttons.buy1.dataset.owned = localStorage.buttons_buy1_owned
+  if (buttons.buy1.dataset.owned) {
+    buttons.buy1.innerText = "Click ($5)"
+  }
 }
 
 GAME.prototype.update = function() {
