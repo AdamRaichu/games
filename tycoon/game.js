@@ -17,7 +17,7 @@ var GAME = function () {
   this.clickEvents = {
     default: function(){Game.earn(1)},
     buy1: function () {
-      if (buttons.buy1.dataset.owned === true) {
+      if (buttons.buy1.dataset.owned === 'true') {
         Game.earn(5)
       } else {
         if (Game.currency >= 100) {
