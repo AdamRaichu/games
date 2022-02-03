@@ -42,8 +42,12 @@
 					alert("Your preferences have been saved.")
 					location.reload()
 				}
+				function resetUserPrefs() {
+					localStorage.removeItem("userColorBg")
+					localStorage.removeItem("userColorHd")
+					location.reload()
+				}
 			</script>
-			<p> Any blank fields are reset to defaults. Your current choices should show up as options, but be careful when saving. </p>
 			<label for="userColorBgInput"> What color would you like the site's background to be? </label>
 			<input type="color" name="userColorBgInput" id="userColorBgInput">
 			<br>
@@ -63,15 +67,9 @@
 				Your browser does not support this audio element (burp).
 			</audio>
 			<br>
-			<button onclick="saveUserPrefs()">Save Settings</button>
+			<button onclick="saveUserPrefs()">Save Settings</button> <button onclick="resetUserPrefs()">
 		</div>
 		<script src="https://adamraichu.github.io/games/snake/global.js"></script>
-		<script id="showPreviousPrefs">
-			//This code adds the user's previous selections to the datalists.
-			//It uses JQuery as well as variables from global.js.
-			$("#userColorHdInputList").append('<option value="' + userColorHd + '"> Current Selection </option>')
-			$("#userColorBgInputList").append('<option value="' + userColorBg + '"> Current Selection </option>')
-		</script>
 	</body>
 
 </html>
