@@ -45,6 +45,7 @@
 				function resetUserPrefs() {
 					localStorage.removeItem("userColorBg")
 					localStorage.removeItem("userColorHd")
+					localStorage.removeItem("userPlayBurp")
 					location.reload()
 				}
 			</script>
@@ -67,7 +68,7 @@
 				Your browser does not support this audio element (burp).
 			</audio>
 			<br>
-			<button onclick="saveUserPrefs()">Save Settings</button> <button onclick="resetUserPrefs()">
+			<button onclick="saveUserPrefs()">Save Settings</button> <button onclick="resetUserPrefs()">Reset Settings</button>
 		</div>
 		<script src="https://adamraichu.github.io/games/snake/global.js"></script>
 	</body>
