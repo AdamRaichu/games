@@ -58,4 +58,9 @@ function begin() {//  /tycoon/game.js
   
   var Game = new GAME()
   Game.update()
+  
+  buttons.click.addEventListener("click", function() {
+    Game.earn(1);
+    Game.update();
+  })
 }
