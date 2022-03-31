@@ -73,7 +73,6 @@ function playSnake() {
     localStorage.setItem("apples", JSON.stringify(apples))
   };
 
-  // Draw a circle (using the function from Chapter 14)
   var circle = function(x, y, radius, fillCircle) {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2, false)
