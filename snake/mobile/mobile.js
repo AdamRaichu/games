@@ -1,11 +1,5 @@
 //This code (although based off of a project from a learn to code book) was written by AdamRaichu
 var canvas = AR.id("canvas")
-var buttons = {
-  left: AR.id("button_left"),
-  up: AR.id("button_up"),
-  right: AR.id("button_right"),
-  down: AR.id("button_down")
-}
 
 function playSnake() {
   
