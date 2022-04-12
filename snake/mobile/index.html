@@ -23,7 +23,9 @@
 	<body>
 		<center>
 			<button id="button_up">⬆️</button>
+			<br>
 			<button id="button_left">⬅️</button><canvas id="canvas"></canvas><button id="button_right">➡️</button>
+			<br>
 			<button id="button_down">⬇️</button>
 			<br>
 		<center>
@@ -45,6 +47,7 @@
 			</audio>
 		</div>
 		<script>
+			var canvas = AR.id("canvas");
 			canvas.height = window.innerWidth * 0.8;
 			canvas.width = canvas.height;
 		</script>
