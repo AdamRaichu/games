@@ -12,11 +12,38 @@
 		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 		<!-- My own code -->
 		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/global.css">
+		<script src="https://adamraichu.github.io/code/adlib/version.js"></script>
+		<script src="https://adamraichu.github.io/code/adlib/latest.js"></script>
+		<script src="https://adamraichu.github.io/games/snake/mobile/mobile.js"></script>
+		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/mobile/mobile.css">
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="https://adamraichu.github.io/games/snake/images/logo48x48.png">
 	</head>
 
 	<body>
+		<center>
+			<button id="button_up">⬆️</button>
+			<button id="button_left">⬅️</button><canvas id="canvas"></canvas><button id="button_right">➡️</button>
+			<button id="button_down">⬇️</button>
+			<br>
+		<center>
+		<center>
+			<button onclick="playSnake()" class="myButton" id="buttonStart" style="display: inline;">Start</button>
+		</center>
+		<div id="audio">
+			<audio id="burpAudio" preload="auto">
+				<source src="https://adamraichu.github.io/games/snake/sounds/burp.ogg">
+				Your browser does not support this audio element (burp sound).
+			</audio>
+			<audio id="mario_deathAudio">
+				<source src="https://adamraichu.github.io/games/snake/sounds/mario_death.wav">
+				Your browser does not support this audio element (death sound).
+			</audio>
+			<audio id="new_highscoreAudio">
+				<source src="https://adamraichu.github.io/games/snake/sounds/new_highscore.wav">
+				You browser does not support this audio element (new highscore sound).
+			</audio>
+		</div>
 	</body>
 
 </html>
