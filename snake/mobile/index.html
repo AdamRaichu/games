@@ -24,7 +24,11 @@
 		<center>
 			<button id="button_up">⬆️</button>
 			<br>
-			<button id="button_left">⬅️</button><canvas id="canvas"></canvas><button id="button_right">➡️</button>
+			<div style="display: flex">
+				<button id="button_left">⬅️</button>
+				<canvas id="canvas"></canvas>
+				<button id="button_right">➡️</button>
+			</div>
 			<br>
 			<button id="button_down">⬇️</button>
 			<br>
@@ -57,15 +61,15 @@
 			var canvas = AR.id("canvas");
 			canvas.height = window.innerWidth * 0.8;
 			canvas.width = canvas.height;
-			buttons.left.style.height = canvas.height
-			buttons.up.style.width = canvas.width
-			buttons.right.style.height = canvas.height
-			buttons.down.style.width = canvas.width
+			buttons.left.style.height = canvas.height + "px"
+			buttons.up.style.width = canvas.width + "px"
+			buttons.right.style.height = canvas.height + "px"
+			buttons.down.style.width = canvas.width + "px"
 			
-			buttons.left.style.width = canvas.width * 0.1
-			buttons.up.style.height = canvas.height * 0.1
-			buttons.right.style.width = canvas.width * 0.1
-			buttons.down.style.height = canvas.height * 0.1
+			buttons.left.style.width = canvas.width * 0.1 + "px"
+			buttons.up.style.height = canvas.height * 0.1 + "px"
+			buttons.right.style.width = canvas.width * 0.1 + "px"
+			buttons.down.style.height = canvas.height * 0.1 + "px"
 		</script>
 	</body>
 
