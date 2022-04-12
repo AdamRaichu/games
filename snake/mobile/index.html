@@ -47,6 +47,13 @@
 			</audio>
 		</div>
 		<script>
+			var buttons = {
+				left: AR.id("button_left"),
+				up: AR.id("button_up"),
+				right: AR.id("button_right"),
+				down: AR.id("button_down")
+			}
+			
 			var canvas = AR.id("canvas");
 			canvas.height = window.innerWidth * 0.8;
 			canvas.width = canvas.height;
