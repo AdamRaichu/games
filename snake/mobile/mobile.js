@@ -1,7 +1,5 @@
 //This code (although based off of a project from a learn to code book) was written by AdamRaichu
 var canvas = AR.id("canvas")
-canvas.height = window.innerWidth * 0.8
-canvas.width = canvas.height
 
 function playSnake() {
   
