@@ -25,8 +25,7 @@ function playSnake() {
   
   //Hide the start button to prevent duplicate "ghost" snakes by multiple clicks of button.
   var start = AR.id("buttonStart");
-  var buttons = AR.id("buttons");
-  buttons.style.display = "none";
+  start.style.display = "none";
   
   // Set up canvas
   var ctx = canvas.getContext("2d");
