@@ -74,7 +74,7 @@ function playSnake() {
     } else {
       death.play()
     }
-    buttons.style.display = "inline";
+    start.style.display = "inline";
     start.innerHTML = "Play Again";
     localStorage.setItem("moves", JSON.stringify(moves))
     localStorage.setItem("apples", JSON.stringify(apples))
@@ -171,9 +171,7 @@ function playSnake() {
     if (newHead.equal(apple.position)) {
       score++;
       apple.move();
-      if(userPlayBurp !== "false") {
-        burp.play();
-      }
+      burp.play();
     } else {
       this.segments.pop();
     }
