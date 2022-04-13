@@ -36,12 +36,14 @@ POKEMON.prototype.makeActive = function () {
 	appendIcons(this.movesArray[0].cost, pokeCard.moves.move1.cost)
 	pokeCard.moves.move1.name.innerText = this.movesArray[0].name
 	pokeCard.moves.move1.damage.innerText = this.movesArray[0].damage
+	pokeCard.moves.move1.text.innerText = this.movesArray[0].text
 	
 	if (this.moveCount >= 2) {
 		pokeCard.moves.move2.cost.innerHTML = ""
 		appendIcons(this.movesArray[1].cost, pokeCard.moves.move2.cost)
 		pokeCard.moves.move2.name.innerText = this.movesArray[1].name
 		pokeCard.moves.move2.damage.innerText = this.movesArray[1].damage
+		pokeCard.moves.move2.text.innerText = this.movesArray[1].text
 	}
 	
 	pokeCard.portrait.style.backgroundImage = 'url(' + this.imageURL + ')'
