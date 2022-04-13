@@ -58,7 +58,10 @@
 			}
 			
 			var canvas = AR.id("canvas");
-			canvas.height = window.innerWidth * 0.8;
+			
+			var canvasWidth = Math.floor((window.innerWidth * 0.8)/10) * 10
+			
+			canvas.height = canvasWidth;
 			canvas.width = canvas.height;
 			buttons.left.style.height = canvas.height + "px"
 			buttons.up.style.width = canvas.width + "px"
