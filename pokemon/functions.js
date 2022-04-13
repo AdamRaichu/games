@@ -21,6 +21,8 @@ function typeToString (number) {
 		return "dragon"
 	} else if (number === 10) {
 		return "colorless"
+	} else {
+		return "unknown"
 	}
 }
 
