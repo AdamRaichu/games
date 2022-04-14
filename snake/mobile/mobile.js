@@ -69,8 +69,6 @@ function playSnake() {
     }
     start.style.display = "inline";
     start.innerHTML = "Play Again";
-    localStorage.setItem("moves", JSON.stringify(moves))
-    localStorage.setItem("apples", JSON.stringify(apples))
   };
 
   var circle = function(x, y, radius, fillCircle) {
