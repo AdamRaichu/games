@@ -228,6 +228,7 @@ function playSnake() {
   // Pass an animation function to setInterval
   var intervalId = setInterval(function() {
     ctx.clearRect(0, 0, width, height);
+    ctx.drawGrid(10)
     drawScore();
     snake.move();
     snake.draw();
