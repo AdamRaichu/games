@@ -1,10 +1,7 @@
-.scoreboard {
-	width: 300px;
-	margin: auto;
-	display: flex;
-  justify-content: space-between;
-}
-
 canvas {
 	background-color: white;
+}
+
+#buttons {
+	text-align: center;
 }

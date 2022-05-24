@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<!-- About the page -->
-		<title>Snake by AdamRaichu | Settings</title>
-		<meta name="description" content="Change the look of your game by customizing colors.">
-		<meta name="keywords" content="Snake, Settings, Customize">
-		<meta name="author" content="AdamRaichu">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- JQuery --> 
-		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-		<!-- My own code -->
-		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/global.css">
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="https://adamraichu.github.io/games/snake/images/logo48x48.png">
-	</head>
+<head>
+	<!-- About the page -->
+	<title>Snake by AdamRaichu | Settings</title>
+	<meta name="description" content="Change the look of your game by customizing colors.">
+	<meta name="keywords" content="Snake, Settings, Customize">
+	<meta name="author" content="AdamRaichu">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<!-- My own code -->
+	<link rel="stylesheet" href="/games/snake/global.css">
+	<script src="/code/adlib/version.js"></script>
+	<script src="/code/adlib/latest.js"></script>
+</head>
 
-	<body style="background-color: darkblue;">
-		<div class="site-header" id="site-header" style="background-color: green;">
-			<a style="color: black;" href="https://adamraichu.github.io/games/snake">GAME</a>
-			<a style="color: black;" href="https://adamraichu.github.io/games/snake/ai">AI</a>
-		</div>
-		<h1>Settings</h1>
-		<div id="form">
-			<script id="saveUserPrefs">
-				//Save and update the colors of the page based on input.
-				function saveUserPrefs() {
-					//Background
-					userColorBg = document.getElementById("userColorBgInput").value;
-					document.body.style.backgroundColor = userColorBg;
-					localStorage.setItem("userColorBg", userColorBg);
-					//Header
-					userColorHd = document.getElementById("userColorHdInput").value;
-					document.getElementById("site-header").style.backgroundColor = userColorHd;
-					localStorage.setItem("userColorHd", userColorHd);
-					//Burp
-					userPlayBurp = document.getElementById("userPlayBurpInput").checked;
-					//No second argument because burps aren't played on this page
-					localStorage.setItem("userPlayBurp", userPlayBurp);
-					//Alert the user that the form was submitted.
-					alert("Your preferences have been saved.")
-					location.reload()
-				}
-				function resetUserPrefs() {
-					localStorage.removeItem("userColorBg")
-					localStorage.removeItem("userColorHd")
-					localStorage.removeItem("userPlayBurp")
-					alert("Your preferences have been reset to defaults.")
-					location.reload()
-				}
-			</script>
-			<label for="userColorBgInput"> What color would you like the site's background to be? </label>
-			<input type="color" name="userColorBgInput" id="userColorBgInput">
-			<br>
-			<label for="userColorHdInput"> What color would you like the site header to be? </label>
-			<input type="color" name="userColorHdInput" id="userColorHdInput">
-			<br>
-			<label for="userPlayBurpInput"> Play burp sound when you eat an apple? </label>
-			<input type="checkbox" id="userPlayBurpInput" checked>
-			<button onclick="previewBurp()">Preview Burp Sound</button>
-			<script id="previewBurp">
-				function previewBurp() {
-					document.getElementById("burpAudioPreview").play()
-				}
-			</script>
-			<audio preload="auto" id="burpAudioPreview">
-				<source src="https://adamraichu.github.io/games/snake/sounds/burp.ogg">
-				Your browser does not support this audio element (burp).
-			</audio>
-			<br>
-			<button onclick="saveUserPrefs()">Save Settings</button> <button onclick="resetUserPrefs()">Reset Settings</button>
-		</div>
-		<script src="https://adamraichu.github.io/games/snake/global.js"></script>
-	</body>
+<body style="background-color: darkblue;">
+	<div class="site-header" id="site-header" style="background-color: green;">
+		<a href="/games/snake">GAME</a>
+		<a href="/games/snake/ai">AI</a>
+	</div>
+	<h1>Settings</h1>
+	<div id="form">
+		<script id="saveUserPrefs">
+			//Save and update the colors of the page based on input.
+			function saveUserPrefs() {
+				//Background
+				userColorBg = document.getElementById("userColorBgInput").value;
+				document.body.style.backgroundColor = userColorBg;
+				localStorage.setItem("userColorBg", userColorBg);
+				//Header
+				userColorHd = document.getElementById("userColorHdInput").value;
+				document.getElementById("site-header").style.backgroundColor = userColorHd;
+				localStorage.setItem("userColorHd", userColorHd);
+				//Burp
+				userPlayBurp = document.getElementById("userPlayBurpInput").checked;
+				//No second argument because burps aren't played on this page
+				localStorage.setItem("userPlayBurp", userPlayBurp);
+				//Alert the user that the form was submitted.
+				alert("Your preferences have been saved.")
+				location.reload()
+			}
+			function resetUserPrefs() {
+				localStorage.removeItem("userColorBg")
+				localStorage.removeItem("userColorHd")
+				localStorage.removeItem("userPlayBurp")
+				alert("Your preferences have been reset to defaults.")
+				location.reload()
+			}
+		</script>
+		<label for="userColorBgInput"> What color would you like the site's background to be? </label>
+		<input type="color" name="userColorBgInput" id="userColorBgInput">
+		<br>
+		<label for="userColorHdInput"> What color would you like the site header to be? </label>
+		<input type="color" name="userColorHdInput" id="userColorHdInput">
+		<br>
+		<label for="userPlayBurpInput"> Play burp sound when you eat an apple? </label>
+		<input type="checkbox" id="userPlayBurpInput" checked>
+		<button onclick="previewBurp()">Preview Burp Sound</button>
+		<script id="previewBurp">
+			function previewBurp() {
+				document.getElementById("burpAudioPreview").play()
+			}
+		</script>
+		<audio preload="auto" id="burpAudioPreview">
+			<source src="/sounds/burp.ogg">
+			Your browser does not support this audio element (burp).
+		</audio>
+		<br>
+		<button onclick="saveUserPrefs()">Save Settings</button> <button onclick="resetUserPrefs()">Reset
+			Settings</button>
+	</div>
+	<script src="/games/snake/global.js"></script>
+	<script>
+		AR.$("#userColorBgInput").value = localStorage.getItem("userColorBg")
+		AR.$("#userColorHdInput").value = localStorage.getItem("userColorHd")
+		AR.$("#userPlayBurpInput").checked = eval(localStorage.getItem("userPlayBurp"))
+	</script>
+</body>
 
 </html>

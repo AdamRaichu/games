@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<!-- About the page -->
-		<title>Snake by AdamRaichu</title>
-		<meta name="description" content="Play the classic Snake game!">
-		<meta name="keywords" content="Snake, Game">
-		<meta name="author" content="AdamRaichu">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- JQuery --> 
-		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-		<!-- My own code -->
-		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/index.css">
-		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/global.css">
-		<script src="https://adamraichu.github.io/code/adlib/version.js"></script>
-		<script src="https://adamraichu.github.io/code/adlib/latest.js"></script>
-		<script src="https://adamraichu.github.io/games/snake/game.js"></script>
-		<script>if ((window.innerWidth < window.innerHeight) || (window.innerHeight < 400) || (window.innerWidth < 400)){window.open("https://adamraichu.github.io/games/snake/mobile/", "_self")}</script>
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="https://adamraichu.github.io/games/snake/images/logo48x48.png">
-	</head>
+<head>
+	<!-- About the page -->
+	<title>Snake by AdamRaichu</title>
+	<meta name="description" content="Play the classic Snake game!">
+	<meta name="keywords" content="Snake, Game">
+	<meta name="author" content="AdamRaichu">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://adamraichu.github.io/games/snake">
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<!-- My own code -->
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="global.css">
+	<script src="/code/adlib/version.js"></script>
+	<script src="/code/adlib/latest.js"></script>
+	<script src="game.js"></script>
+	<script>if ((window.innerWidth < window.innerHeight) || (window.innerHeight < 400) || (window.innerWidth < 400)) { window.open("https://adamraichu.github.io/games/snake/mobile/", "_self") }</script>
+</head>
 
-	<body>
-		<div class="site-header" style="background-color: green;">
-			<a style="color: black;" href="https://adamraichu.github.io/games/snake/ai" alt="Watch a replay of your previous game.">AI</a>
-			<a style="color: black;" href="https://adamraichu.github.io/games/snake/settings" alt="Customize the look of the page.">SETTINGS</a>
-		</div>
-		<div class="center">
-			<canvas id="canvas" width="400" height="400"></canvas>
-			<br>
-		</div>
-		<center>
-			<div id="buttons">
-				<button onclick="playSnake()" class="myButton" id="buttonStart" style="display: inline;">Start</button>
-			</div>
-		</center>
-		<div id="audio">
-			<audio id="burpAudio" preload="auto">
-				<source src="https://adamraichu.github.io/games/snake/sounds/burp.ogg">
-				Your browser does not support this audio element (burp sound).
-			</audio>
-			<audio id="mario_deathAudio">
-				<source src="https://adamraichu.github.io/games/snake/sounds/mario_death.wav">
-				Your browser does not support this audio element (death sound).
-			</audio>
-			<audio id="new_highscoreAudio">
-				<source src="https://adamraichu.github.io/games/snake/sounds/new_highscore.wav">
-				You browser does not support this audio element (new highscore sound).
-			</audio>
-		</div>
-		<script src="https://adamraichu.github.io/games/snake/global.js"></script>
-	</body>
+<body>
+	<div class="site-header" style="background-color: green;">
+		<a href="/games/snake/ai" alt="Watch a replay of your previous game.">Replay</a>
+		<a href="/games/snake/settings" alt="Customize the look of the page.">SETTINGS</a>
+	</div>
+	<div class="center">
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<br>
+	</div>
+	<div id="buttons">
+		<button onclick="playSnake()" class="myButton" id="buttonStart" style="display: inline;">Start</button>
+	</div>
+	<div id="audio">
+		<audio id="burpAudio" preload="auto">
+			<source src="/sounds/burp.ogg">
+			Your browser does not support this audio element (burp sound).
+		</audio>
+		<audio id="mario_deathAudio">
+			<source src="/sounds/mario_death.wav">
+			Your browser does not support this audio element (death sound).
+		</audio>
+		<audio id="new_highscoreAudio">
+			<source src="/sounds/new_highscore.wav">
+			You browser does not support this audio element (new highscore sound).
+		</audio>
+	</div>
+	<script src="global.js"></script>
+</body>
 
 </html>
