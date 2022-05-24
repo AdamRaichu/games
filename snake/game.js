@@ -1,22 +1,22 @@
 //This code (although based off of a project from a learn to code book) was written by AdamRaichu
 function playSnake() {
-  
+
   var moves = []
   var apples = []
-  
+
   //Get the highscore. If nothing is stored, it returns null. (3 > null) returns true.
   var highscore = localStorage.getItem("highscore")
-  
+
   //Define the burp file and the mario_death file.
   var burp = AR.id("burpAudio");
   var death = AR.id("mario_deathAudio");
   var newHigh = AR.id("new_highscoreAudio");
-  
+
   //Hide the start button to prevent duplicate "ghost" snakes by multiple clicks of button.
   var start = AR.id("buttonStart");
   var buttons = AR.id("buttons");
   buttons.style.display = "none";
-  
+
   // Set up canvas
   var canvas = AR.id("canvas")
   var ctx = canvas.getContext("2d");
@@ -34,7 +34,7 @@ function playSnake() {
   var score = 0;
 
   // Draw the border
-  var drawBorder = function() {
+  var drawBorder = function () {
     ctx.fillStyle = "Gray";
     ctx.fillRect(0, 0, width, blockSize);
     ctx.fillRect(0, height - blockSize, width, blockSize);
@@ -43,7 +43,7 @@ function playSnake() {
   };
 
   // Draw the score in the top-left corner
-  var drawScore = function() {
+  var drawScore = function () {
     ctx.font = "20px Courier";
     ctx.fillStyle = "Black";
     ctx.textAlign = "left";
@@ -52,14 +52,14 @@ function playSnake() {
   };
 
   // Clear the interval and display GAME OVER text
-  var gameOver = function() {
+  var gameOver = function () {
     clearInterval(intervalId);
     ctx.font = "60px Courier";
     ctx.fillStyle = "Black";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("Game Over", width / 2, height / 2);
-    if(score > highscore) {
+    if (score > highscore) {
       highscore = score
       localStorage.setItem("highscore", highscore)
       newHigh.play()
@@ -67,13 +67,13 @@ function playSnake() {
     } else {
       death.play()
     }
-    buttons.style.display = "inline";
+    buttons.style.display = "block";
     start.innerHTML = "Play Again";
     localStorage.setItem("moves", JSON.stringify(moves))
     localStorage.setItem("apples", JSON.stringify(apples))
   };
 
-  var circle = function(x, y, radius, fillCircle) {
+  var circle = function (x, y, radius, fillCircle) {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2, false)
     if (fillCircle) {
@@ -84,13 +84,13 @@ function playSnake() {
   };
 
   // The Block constructor
-  var Block = function(col, row) {
+  var Block = function (col, row) {
     this.col = col;
     this.row = row;
   };
 
   // Draw a square at the block's location
-  Block.prototype.drawSquare = function(color) {
+  Block.prototype.drawSquare = function (color) {
     var x = this.col * blockSize;
     var y = this.row * blockSize;
     ctx.fillStyle = color;
@@ -98,7 +98,7 @@ function playSnake() {
   };
 
   // Draw a circle at the block's location
-  Block.prototype.drawCircle = function(color) {
+  Block.prototype.drawCircle = function (color) {
     var centerX = this.col * blockSize + blockSize / 2;
     var centerY = this.row * blockSize + blockSize / 2;
     ctx.fillStyle = color
@@ -106,12 +106,12 @@ function playSnake() {
   };
 
   // Check if this block is in the same location as another block
-  Block.prototype.equal = function(otherBlock) {
+  Block.prototype.equal = function (otherBlock) {
     return this.col === otherBlock.col && this.row === otherBlock.row;
   };
 
   // The Snake constructor 
-  var Snake = function() {
+  var Snake = function () {
     this.segments = [
       new Block(7, 5),
       new Block(6, 5),
@@ -123,12 +123,12 @@ function playSnake() {
   };
 
   // Draw a square for each segment of the snake's body
-  Snake.prototype.draw = function() {
+  Snake.prototype.draw = function () {
     for (var i = 0; i < this.segments.length; i++) {
       if (i === 0) {
         var snakeColor = "yellowgreen"
       } else {
-        var snakeColor = "blue" 
+        var snakeColor = "blue"
       }
       this.segments[i].drawSquare(snakeColor);
     }
@@ -136,12 +136,12 @@ function playSnake() {
 
   // Create a new head and add it to the beginning of 
   // the snake to move the snake in its current direction
-  Snake.prototype.move = function() {
+  Snake.prototype.move = function () {
     var head = this.segments[0];
     var newHead;
 
     this.direction = this.nextDirection;
-    
+
     moves.push(this.direction)
 
     if (this.direction === "right") {
@@ -164,7 +164,7 @@ function playSnake() {
     if (newHead.equal(apple.position)) {
       score++;
       apple.move();
-      if(userPlayBurp !== "false") {
+      if (userPlayBurp !== "false") {
         burp.play();
       }
     } else {
@@ -173,7 +173,7 @@ function playSnake() {
   };
 
   // Check if the snake's new head has collided with the wall or itself
-  Snake.prototype.checkCollision = function(head) {
+  Snake.prototype.checkCollision = function (head) {
     var leftCollision = (head.col === 0);
     var topCollision = (head.row === 0);
     var rightCollision = (head.col === widthInBlocks - 1);
@@ -193,7 +193,7 @@ function playSnake() {
   };
 
   // Set the snake's next direction based on the keyboard
-  Snake.prototype.setDirection = function(newDirection) {
+  Snake.prototype.setDirection = function (newDirection) {
     if (this.direction === "up" && newDirection === "down") {
       return;
     } else if (this.direction === "right" && newDirection === "left") {
@@ -208,17 +208,17 @@ function playSnake() {
   };
 
   // The Apple constructor 
-  var Apple = function() {
+  var Apple = function () {
     this.position = new Block(10, 10);
   };
 
   // Draw a circle at the appple's location
-  Apple.prototype.draw = function() {
+  Apple.prototype.draw = function () {
     this.position.drawCircle("LimeGreen");
   };
 
   //Move the apple to a new random location
-  Apple.prototype.move = function() {
+  Apple.prototype.move = function () {
     var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1;
     var randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
     this.position = new Block(randomCol, randomRow);
@@ -230,7 +230,7 @@ function playSnake() {
   var apple = new Apple();
 
   // Pass an animation function to setInterval
-  var intervalId = setInterval(function() {
+  var intervalId = setInterval(function () {
     ctx.clearRect(0, 0, width, height);
     drawScore();
     snake.move();
@@ -254,7 +254,7 @@ function playSnake() {
   };
 
   // The keydown handler for handling direction key presses.
-  $("body").keydown(function(event) {
+  $("body").keydown(function (event) {
     var newDirection = directions[event.keyCode];
     if (newDirection !== undefined) {
       snake.setDirection(newDirection);
