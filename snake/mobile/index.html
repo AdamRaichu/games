@@ -1,78 +1,77 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<!-- About the page -->
-		<title>Snake by AdamRaichu | Mobile Version</title>
-		<meta name="description" content="Play my version of the classic Snake game: now on your mobile device!">
-		<meta name="keywords" content="Snake, Mobile, Small">
-		<meta name="author" content="AdamRaichu">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- JQuery --> 
-		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-		<!-- My own code -->
-		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/global.css">
-		<script src="https://adamraichu.github.io/code/adlib/version.js"></script>
-		<script src="https://adamraichu.github.io/code/adlib/latest.js"></script>
-		<script src="https://adamraichu.github.io/games/snake/mobile/mobile.js"></script>
-		<link rel="stylesheet" href="https://adamraichu.github.io/games/snake/mobile/mobile.css">
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="https://adamraichu.github.io/games/snake/images/logo48x48.png">
-	</head>
+<head>
+	<!-- About the page -->
+	<title>Snake by AdamRaichu | Mobile Version</title>
+	<meta name="description" content="Play my version of the classic Snake game: now on your mobile device!">
+	<meta name="keywords" content="Snake, Mobile, Small">
+	<meta name="author" content="AdamRaichu">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<!-- My own code -->
+	<link rel="stylesheet" href="/games/snake/global.css">
+	<script src="/code/adlib/version.js"></script>
+	<script src="/code/adlib/latest.js"></script>
+	<script src="mobile.js"></script>
+	<link rel="stylesheet" href="mobile.css">
 
-	<body>
-		<center>
-			<button id="button_up">⬆️</button>
-			<br>
-			<div style="display: flex">
-				<button id="button_left">⬅️</button>
-				<canvas id="canvas"></canvas>
-				<button id="button_right">➡️</button>
-			</div>
-			<button id="button_down">⬇️</button>
-			<br>
-		<center>
-		<center>
-			<button onclick="playSnake()" class="myButton" id="buttonStart" style="display: inline;">Start</button>
-		</center>
-		<div id="audio">
-			<audio id="burpAudio" preload="auto">
-				<source src="https://adamraichu.github.io/games/snake/sounds/burp.ogg">
-				Your browser does not support this audio element (burp sound).
-			</audio>
-			<audio id="mario_deathAudio">
-				<source src="https://adamraichu.github.io/games/snake/sounds/mario_death.wav">
-				Your browser does not support this audio element (death sound).
-			</audio>
-			<audio id="new_highscoreAudio">
-				<source src="https://adamraichu.github.io/games/snake/sounds/new_highscore.wav">
-				You browser does not support this audio element (new highscore sound).
-			</audio>
+</head>
+
+<body>
+	<div class="center">
+		<button id="button_up">⬆️</button>
+		<br>
+		<div style="display: flex">
+			<button id="button_left">⬅️</button>
+			<canvas id="canvas"></canvas>
+			<button id="button_right">➡️</button>
 		</div>
-		<script>
-			var buttons = {
-				left: AR.id("button_left"),
-				up: AR.id("button_up"),
-				right: AR.id("button_right"),
-				down: AR.id("button_down")
-			}
-			
-			var canvas = AR.id("canvas");
-			
-			var canvasWidth = Math.floor((window.innerWidth * 0.8)/10) * 10
-			
-			canvas.height = canvasWidth;
-			canvas.width = canvas.height;
-			buttons.left.style.height = canvas.height + "px"
-			buttons.up.style.width = canvas.width + "px"
-			buttons.right.style.height = canvas.height + "px"
-			buttons.down.style.width = canvas.width + "px"
-			
-			buttons.left.style.width = canvas.width * 0.1 + "px"
-			buttons.up.style.height = canvas.height * 0.1 + "px"
-			buttons.right.style.width = canvas.width * 0.1 + "px"
-			buttons.down.style.height = canvas.height * 0.1 + "px"
-		</script>
-	</body>
+		<button id="button_down">⬇️</button>
+		<br>
+	</div>
+	<div id="buttons">
+		<button onclick="playSnake()" class="myButton" id="buttonStart" style="display: inline;">Start</button>
+	</div>
+	<div id="audio">
+		<audio id="burpAudio" preload="auto">
+			<source src="/sounds/burp.ogg">
+			Your browser does not support this audio element (burp sound).
+		</audio>
+		<audio id="mario_deathAudio">
+			<source src="/sounds/mario_death.wav">
+			Your browser does not support this audio element (death sound).
+		</audio>
+		<audio id="new_highscoreAudio">
+			<source src="/sounds/new_highscore.wav">
+			You browser does not support this audio element (new highscore sound).
+		</audio>
+	</div>
+	<script>
+		var buttons = {
+			left: AR.id("button_left"),
+			up: AR.id("button_up"),
+			right: AR.id("button_right"),
+			down: AR.id("button_down")
+		}
+
+		var canvas = AR.id("canvas");
+
+		var canvasWidth = Math.floor((window.innerWidth * 0.8) / 10) * 10
+
+		canvas.height = canvasWidth;
+		canvas.width = canvas.height;
+		buttons.left.style.height = canvas.height + "px"
+		buttons.up.style.width = canvas.width + "px"
+		buttons.right.style.height = canvas.height + "px"
+		buttons.down.style.width = canvas.width + "px"
+
+		buttons.left.style.width = canvas.width * 0.1 + "px"
+		buttons.up.style.height = canvas.height * 0.1 + "px"
+		buttons.right.style.width = canvas.width * 0.1 + "px"
+		buttons.down.style.height = canvas.height * 0.1 + "px"
+	</script>
+</body>
 
 </html>
