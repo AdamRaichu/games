@@ -72,7 +72,7 @@ PLAYER.prototype.move = function (dir) {
 var directions = {
   //arrows
   ArrowLeft: "left",
-  ArrowUP: "up",
+  ArrowUp: "up",
   ArrowRight: "right",
   ArrowDown: "down",
   //WASD
