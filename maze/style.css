@@ -1,0 +1,21 @@
+body {
+  background-color: #1f2227;
+  color: white;
+}
+
+div#main {
+  display: flex;
+  justify-content: space-around;
+}
+
+div#buttons {
+  text-align: center;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+  background-color: #30353d;
+  background-size: contain;
+  text-align: center;
+}
