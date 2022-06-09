@@ -31,6 +31,7 @@ var PLAYER = function (map, xPos, yPos) {
   this.x = xPos;
   this.y = yPos;
 
+  this.map.generate()
   this.map.map[this.y][this.x] = "*"
   this.map.target.children[this.y].children[this.x].innerText = "*"
 };
