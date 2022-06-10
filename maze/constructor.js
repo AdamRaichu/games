@@ -16,7 +16,7 @@ MAP.prototype.generate = function () {
       this.target.children[c].children[c2].innerText = this.map[c][c2]
       if (this.target.children[c].children[c2].innerText === "1") {
         this.target.children[c].children[c2].innerText = ""
-        this.target.children[c].children[c2].style.backgroundImage = "url(https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190121140612/Minecraft-Bricks.jpg)"
+        this.target.children[c].children[c2].style.backgroundImage = "url(/images/bricks.jpg)"
       } else if (this.target.children[c].children[c2].innerText === "0") {
         this.target.children[c].children[c2].innerText = ""
       } else if (this.target.children[c].children[c2].innerText === "@") {
