@@ -28,3 +28,7 @@ div#status {
   width: 100px;
   background-color: #30353d;
 }
+
+div#victory {
+  margin-bottom: 10px;
+}
