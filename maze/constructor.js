@@ -10,19 +10,22 @@ MAP.prototype.generate = function () {
   for (c = 0; c < this.map.length; c++) {
     this.target.appendChild(document.createElement("tr"))
     for (c2 = 0; c2 < this.map[c].length; c2++) {
+      var e = this[target][children][c][children][c2]
       this.target.children[c].appendChild(document.createElement("td"))
-      this.target.children[c].children[c2].dataset.x = c2 + 1
-      this.target.children[c].children[c2].dataset.y = c + 1
-      this.target.children[c].children[c2].innerText = this.map[c][c2]
-      if (this.target.children[c].children[c2].innerText === "1") {
-        this.target.children[c].children[c2].innerText = ""
-        this.target.children[c].children[c2].style.backgroundImage = "url(/images/bricks.jpg)"
-      } else if (this.target.children[c].children[c2].innerText === "0") {
-        this.target.children[c].children[c2].innerText = ""
-      } else if (this.target.children[c].children[c2].innerText === "@") {
-        this.target.children[c].children[c2].innerText = "🏆"
-      } else if (this.target.children[c].children[c2].innerText === "b") {
-        this.target.children[c].children[c2].style.opacity = 0
+      e.dataset.x = c2 + 1
+      e.dataset.y = c + 1
+      e.innerText = this.map[c][c2]
+      if (e.innerText === "1") {
+        e.innerText = ""
+        e.style.backgroundImage = "url(/images/bricks.jpg)"
+      } else if (e.innerText === "0") {
+        e.innerText = ""
+      } else if (e.innerText === "@") {
+        e.innerText = "🏆"
+      } else if (e.innerText === "b") {
+        e.style.opacity = 0
+      } else if (e.innerText === "k") {
+        e.innerText = "🗝️"
       }
     }
   }
