@@ -8,6 +8,10 @@ table {
   justify-content: space-around;
 }
 
+tbody {
+  border-spacing: 0;
+}
+
 div#buttons {
   text-align: center;
 }
