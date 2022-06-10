@@ -36,6 +36,8 @@ var PLAYER = function (map, xPos, yPos) {
   this.map.generate()
   this.map.map[this.y][this.x] = "*"
   this.map.target.children[this.y].children[this.x].innerText = "*"
+
+  console.info("Playing with the developer console may cause images to blink due to debug messages. For best play, keep this closed.")
 };
 PLAYER.prototype.move = function (dir) {
   this.map.map[this.y][this.x] = "0"
