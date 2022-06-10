@@ -61,6 +61,7 @@ PLAYER.prototype.move = function (dir) {
   }
 
   if (this.map.get(this.x, this.y) === "@") {
+    document.removeEventListener("keydown", movePlayer)
     alert("you win")
   }
 

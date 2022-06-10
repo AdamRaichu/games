@@ -2,9 +2,12 @@ function loadMap(mapObject) {
   document.getElementById("d").innerText = mapObject.text;
   window.player = new PLAYER(new MAP(mapObject.matrix, document.getElementById("target")), 1, 1);
   player.map.generate();
-  document.addEventListener("keydown", function (event) {
-    player.move(directions[event.key])
-  })
+
+  document.addEventListener("keydown", movePlayer)
+}
+
+function movePlayer(event) {
+  player.move(directions[event.key])
 }
 
 function paramsToObject(entries) {
