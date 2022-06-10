@@ -16,7 +16,7 @@ td {
   width: 20px;
   height: 20px;
   background-color: #30353d;
-  background-size: contain;
+  background-size: cover;
   text-align: center;
 }
 
