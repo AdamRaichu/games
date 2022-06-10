@@ -33,8 +33,15 @@ div#status {
   background-color: #30353d;
 }
 
+div#keys {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 img.key {
   content: url(/images/key.png);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 div#victory {
