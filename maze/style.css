@@ -3,7 +3,7 @@ body {
   color: white;
 }
 
-div#main {
+table {
   display: flex;
   justify-content: space-around;
 }
