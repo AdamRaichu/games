@@ -17,4 +17,9 @@ function paramsToObject(entries) {
   }
   return result;
 }
-loadMap(LEVEL_MAPS[paramsToObject(new URLSearchParams(location.search.substring(1))).map]);
+
+var mapObject = LEVEL_MAPS[paramsToObject(new URLSearchParams(location.search.substring(1))).map]
+if (mapObject === undefined) {
+  mapObject = LEVEL_MAPS.map1
+}
+loadMap(mapObject);
