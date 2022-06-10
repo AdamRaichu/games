@@ -10,7 +10,7 @@ MAP.prototype.generate = function () {
   for (c = 0; c < this.map.length; c++) {
     this.target.appendChild(document.createElement("tr"))
     for (c2 = 0; c2 < this.map[c].length; c2++) {
-      var e = this[target][children][c][children][c2]
+      var e = this["target"]["children"][c]["children"][c2]
       this.target.children[c].appendChild(document.createElement("td"))
       e.dataset.x = c2 + 1
       e.dataset.y = c + 1
