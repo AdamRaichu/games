@@ -4,7 +4,8 @@ function loadMap(mapObject) {
   player.map.generate();
 
   document.addEventListener("keydown", movePlayer)
-  document.getElementById("buttons").style.display = "block"
+  document.getElementById("main").style.display = "block"
+  document.getElementById("victory").style.display = "none"
 }
 
 function movePlayer(event) {
