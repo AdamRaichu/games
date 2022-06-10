@@ -68,6 +68,7 @@ PLAYER.prototype.move = function (dir) {
     document.removeEventListener("keydown", movePlayer)
     this.map.target.innerHTML = '<div id="victory"><h1>You Win!</h1><label for="map">Pick a level. </label><select name="map"><option value="map1">Level 1</option></select><button onclick="loadMap(LEVEL_MAPS[this.parentElement.children[2].value])">Play</button></div>'
     LEVEL_MAPS = JSON.parse(_LEVEL_MAPS)
+    return
   }
 
   this.map.map[this.y][this.x] = "*"
