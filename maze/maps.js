@@ -25,6 +25,18 @@ var LEVEL_MAPS = {
     ],
     x: 1,
     y: 1
+  },
+  map3: {
+    text: "Some mazes will have locked doors. Collect keys to unlock them.",
+    matrix: [
+      ["b", 1, 1, 1, "b", 1, 1, 1],
+      ["b", 1, 0, 1, "b", 1, "@", 1],
+      [1, 1, 0, 1, 1, 1, 0, 1],
+      [1, "k", 0, 0, "d", 0, 0, 1],
+      [1, 1, 1, 1, 1, 1, 1, 1]
+    ],
+    x: 1,
+    y: 1
   }
 };
 
