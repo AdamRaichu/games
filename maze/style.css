@@ -40,6 +40,8 @@ div#keys {
 
 img.key {
   content: url(/images/key.png);
+  height: 20px;
+  width: 20px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
