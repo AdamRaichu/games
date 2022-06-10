@@ -10,8 +10,8 @@ MAP.prototype.generate = function () {
   for (var c = 0; c < this.map.length; c++) {
     this.target.appendChild(document.createElement("tr"));
     for (var c2 = 0; c2 < this.map[c].length; c2++) {
-      var e = this.target.children[c].children[c2];
       this.target.children[c].appendChild(document.createElement("td"));
+      var e = this.target.children[c].children[c2];
       e.dataset.x = c2 + 1;
       e.dataset.y = c + 1;
       e.innerText = this.map[c][c2];
