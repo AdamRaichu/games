@@ -64,7 +64,7 @@ PLAYER.prototype.move = function (dir) {
   }
 
   if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1) {
-    if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "d" && this.keys > 0) {
+    if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||" && this.keys > 0) {
       document.getElementById("keys").lastElementChild.remove();
       this.keys--;
     }
