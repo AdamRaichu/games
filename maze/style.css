@@ -8,6 +8,10 @@ body {
   display: block;
 }
 
+button {
+  margin: 5px;
+}
+
 table {
   display: flex;
   justify-content: space-around;
