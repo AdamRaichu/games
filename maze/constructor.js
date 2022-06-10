@@ -21,6 +21,8 @@ MAP.prototype.generate = function () {
         this.target.children[c].children[c2].innerText = ""
       } else if (this.target.children[c].children[c2].innerText === "@") {
         this.target.children[c].children[c2].innerText = "🏆"
+      } else if (this.target.children[c].children[c2].innerText === "b") {
+        this.target.children[c].children[c2].style.opacity = 0
       }
     }
   }
@@ -55,7 +57,7 @@ PLAYER.prototype.move = function (dir) {
     this.deltaY = 0;
   }
 
-  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1) {
+  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1 && this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "b") {
     this.x += this.deltaX;
     this.y += this.deltaY;
   }
