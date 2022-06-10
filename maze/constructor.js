@@ -57,7 +57,7 @@ PLAYER.prototype.move = function (dir) {
     this.deltaY = 0;
   }
 
-  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1 && this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "b") {
+  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1) {
     this.x += this.deltaX;
     this.y += this.deltaY;
   }
