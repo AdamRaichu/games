@@ -33,6 +33,10 @@ div#status {
   background-color: #30353d;
 }
 
+img.key {
+  content: url(/images/key.png);
+}
+
 div#victory {
   margin-bottom: 10px;
 }
