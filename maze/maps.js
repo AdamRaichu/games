@@ -22,10 +22,10 @@ var LEVEL_MAPS = {
       [1, 0, 1, 1, 1, 1, 0, 1],
       [1, 0, 0, 0, 0, 0, 0, 1],
       [1, 1, 1, 1, 1, 1, 1, 1]
-    ]
-  },
-  x: 1,
-  y: 1
+    ],
+    x: 1,
+    y: 1
+  }
 };
 
 const _LEVEL_MAPS = JSON.stringify(LEVEL_MAPS);
