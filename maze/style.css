@@ -4,6 +4,10 @@ body {
   text-align: center;
 }
 
+#buttons {
+  display: block;
+}
+
 table {
   display: flex;
   justify-content: space-around;

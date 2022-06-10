@@ -70,6 +70,7 @@ PLAYER.prototype.move = function (dir) {
     // add each new map to this HTML
     this.map.target.innerHTML = '<div id="victory"><h1>You Win!</h1><label for="map">Pick a level. </label><select name="map"><option value="map1">Level 1</option></select><button onclick="loadMap(LEVEL_MAPS[this.parentElement.children[2].value])">Play</button></div>'
     LEVEL_MAPS = JSON.parse(_LEVEL_MAPS)
+    document.getElementById("buttons").style.display = "none"
     return
   }
 

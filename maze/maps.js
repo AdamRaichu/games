@@ -14,4 +14,4 @@ var LEVEL_MAPS = {
   }
 };
 
-const _LEVEL_MAPS = JSON.stringify(LEVEL_MAPS)
+const _LEVEL_MAPS = JSON.stringify(LEVEL_MAPS);
