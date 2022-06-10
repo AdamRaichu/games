@@ -19,3 +19,11 @@ td {
   background-size: contain;
   text-align: center;
 }
+
+div#status {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100px;
+  background-color: #30353d;
+}
