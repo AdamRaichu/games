@@ -1,6 +1,7 @@
-var MAP = function (matrix, targetEl) {
+var MAP = function (matrix, targetEl, portals) {
   this.map = matrix;
   this.target = targetEl;
+  this.portals = portals;
 };
 MAP.prototype.get = function (x, y) {
   return this.map[y][x];
@@ -26,6 +27,8 @@ MAP.prototype.generate = function () {
         e.style.opacity = 0;
       } else if (e.innerText === "k") {
         e.innerText = "🗝️";
+      } else if (e.innerText === "p") {
+        e.innerText = "🌀";
       }
     }
   }
@@ -63,13 +66,18 @@ PLAYER.prototype.move = function (dir) {
     this.deltaY = 0;
   }
 
-  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1) {
-    if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||" && this.keys > 0) {
-      document.getElementById("keys").lastElementChild.remove();
-      this.keys--;
+  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "1") {
+    if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||") {
+      if (this.keys !== 0) {
+        document.getElementById("keys").lastElementChild.remove();
+        this.keys--;
+        this.x += this.deltaX;
+        this.y += this.deltaY;
+      }
+    } else {
+      this.x += this.deltaX;
+      this.y += this.deltaY
     }
-    this.x += this.deltaX;
-    this.y += this.deltaY;
   }
 
   if (this.map.get(this.x, this.y) === "k") {
@@ -79,12 +87,22 @@ PLAYER.prototype.move = function (dir) {
     document.getElementById("keys").appendChild(k);
   }
 
+  if (this.map.get(this.x, this.y) === "p") {
+    for (var c3 = 0; c3 < this.map.portals.length; c3++) {
+      if (this.map.portals[c3].from[0] === this.x && this.map.portals[c3].from[1] === this.y) {
+        this.x = this.map.portals[c3].to[0];
+        this.y = this.map.portals[c3].to[1];
+      }
+    }
+  }
+
   if (this.map.get(this.x, this.y) === "@") {
     document.removeEventListener("keydown", movePlayer);
 
     LEVEL_MAPS = JSON.parse(_LEVEL_MAPS);
     document.getElementById("main").style.display = "none";
     document.getElementById("victory").style.display = "block";
+    document.getElementById("keys").innerHTML = "";
     return;
   }
 
