@@ -26,6 +26,8 @@ MAP.prototype.generate = function () {
         e.style.opacity = 0;
       } else if (e.innerText === "k") {
         e.innerText = "🗝️";
+      } else if (e.innerText === "p") {
+        e.innerText = "🌀"
       }
     }
   }
@@ -67,9 +69,9 @@ PLAYER.prototype.move = function (dir) {
     if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||" && this.keys > 0) {
       document.getElementById("keys").lastElementChild.remove();
       this.keys--;
+      this.x += this.deltaX;
+      this.y += this.deltaY;
     }
-    this.x += this.deltaX;
-    this.y += this.deltaY;
   }
 
   if (this.map.get(this.x, this.y) === "k") {
@@ -77,6 +79,14 @@ PLAYER.prototype.move = function (dir) {
     var k = document.createElement("img");
     k.classList.add("key");
     document.getElementById("keys").appendChild(k);
+  }
+
+  if (this.map.get(this.x, this.y) === "p") {
+    for (var c3 = 0; c3 < this.map.portals.length; c3++) {
+      if (this.map.portals[c3].from === [this.x, this.y]) {
+
+      }
+    }
   }
 
   if (this.map.get(this.x, this.y) === "@") {
