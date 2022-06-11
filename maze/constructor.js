@@ -89,7 +89,7 @@ PLAYER.prototype.move = function (dir) {
 
   if (this.map.get(this.x, this.y) === "p") {
     for (var c3 = 0; c3 < this.map.portals.length; c3++) {
-      if (this.map.portals[c3].from === [this.x, this.y]) {
+      if (this.map.portals[c3].from === eval([this.x, this.y])) {
         this.x = this.map.portals[c3].to[0];
         this.y = this.map.portals[c3].to[1];
       }
