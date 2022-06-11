@@ -1,6 +1,7 @@
-var MAP = function (matrix, targetEl) {
+var MAP = function (matrix, targetEl, portals) {
   this.map = matrix;
   this.target = targetEl;
+  this.portals = portals;
 };
 MAP.prototype.get = function (x, y) {
   return this.map[y][x];
