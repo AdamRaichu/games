@@ -65,7 +65,7 @@ PLAYER.prototype.move = function (dir) {
     this.deltaY = 0;
   }
 
-  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1) {
+  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "1") {
     if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||") {
       if (this.keys !== 0) {
         document.getElementById("keys").lastElementChild.remove();
