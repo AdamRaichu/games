@@ -66,11 +66,16 @@ PLAYER.prototype.move = function (dir) {
   }
 
   if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== 1) {
-    if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||" && this.keys > 0) {
-      document.getElementById("keys").lastElementChild.remove();
-      this.keys--;
+    if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||") {
+      if (this.keys !== 0) {
+        document.getElementById("keys").lastElementChild.remove();
+        this.keys--;
+        this.x += this.deltaX;
+        this.y += this.deltaY;
+      }
+    } else {
       this.x += this.deltaX;
-      this.y += this.deltaY;
+      this.y += this.deltaY
     }
   }
 
