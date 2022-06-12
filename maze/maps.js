@@ -62,6 +62,36 @@ var LEVEL_MAPS = {
         to: [3, 1]
       }
     ]
+  },
+  map5: {
+    text: "You may need to go back and forth between portals to get everything you need. Be careful though, not all portals lead to where you might expect.",
+    matrix: [
+      ["1", "1", "1", "1", "1", "1", "1", "1", "1"],
+      ["1", "0", "p", "1", "p", "0", "0", "k", "1"],
+      ["1", "0", "1", "1", "1", "1", "1", "1", "1"],
+      ["1", "0", "p", "1", "p", "0", "||", "@", "1"],
+      ["1", "1", "1", "1", "1", "1", "1", "1", "1"]
+    ],
+    x: 1,
+    y: 2,
+    portals: [
+      {
+        from: [2, 1],
+        to: [5, 3]
+      },
+      {
+        from: [4, 1],
+        to: [1, 3]
+      },
+      {
+        from: [2, 3],
+        to: [5, 1]
+      },
+      {
+        from: [4, 3],
+        to: [1, 1]
+      }
+    ]
   }
 };
 

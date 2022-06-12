@@ -1,5 +1,5 @@
 function loadMap(mapObject) {
-  document.getElementById("d").innerText = mapObject.text;
+  document.getElementById("d").innerHTML = mapObject.text;
   window.player = new PLAYER(new MAP(mapObject.matrix, document.getElementById("target"), mapObject.portals), mapObject.x, mapObject.y);
   player.map.generate();
 
