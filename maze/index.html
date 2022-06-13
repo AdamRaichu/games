@@ -32,6 +32,12 @@
       <button onclick="player.move('down')">down</button>
     </div>
     <p id="d"></p>
+    <div id="status_wrapper">
+      <div id="status">
+        <div id="keys"></div>
+      </div>
+    </div>
+    <button onclick="retry()">retry</button>
   </div>
   <div id="victory">
     <div id="victory">
@@ -46,9 +52,6 @@
       </select>
       <button onclick="loadMap(LEVEL_MAPS[this.parentElement.children[2].value])">Play</button>
     </div>
-  </div>
-  <div id="status">
-    <div id="keys"></div>
   </div>
   <script src="load.js"></script>
 </body>
