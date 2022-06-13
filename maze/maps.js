@@ -69,7 +69,7 @@ var LEVEL_MAPS = {
   },
   map5: {
     mapName: "map5",
-    text: "You may need to go back and forth between portals to get everything you need. Be careful though, not all portals lead to where you might expect.",
+    text: "You may need to go back and forth between portals to get everything you need.",
     matrix: [
       ["1", "1", "1", "1", "1", "1", "1", "1", "1"],
       ["1", "0", "p", "1", "p", "0", "0", "k", "1"],
@@ -95,6 +95,32 @@ var LEVEL_MAPS = {
       {
         from: [4, 3],
         to: [1, 1]
+      }
+    ]
+  },
+  map6: {
+    mapName: "map6",
+    text: "Some portals are only one way. There is no way to tell them apart from regular portals. And not all doors are helpful....\nUse the retry button below if you get stuck.",
+    matrix: [
+      ["1", "1", "1", "1", "1", "1", "1", "1"],
+      ["1", "0", "0", "0", "0", "0", "0", "1"],
+      ["1", "0", "1", "1", "0", "1", "k", "1"],
+      ["1", "0", "0", "1", "0", "1", "||", "1"],
+      ["1", "0", "0", "0", "1", "p", "0", "1"],
+      ["1", "1", "1", "0", "0", "1", "||", "1"],
+      ["1", "p", "0", "0", "0", "1", "@", "1"],
+      ["1", "1", "1", "1", "1", "1", "1", "1"]
+    ],
+    x: 1,
+    y: 1,
+    portals: [
+      {
+        from: [1, 6],
+        to: [6, 4]
+      },
+      {
+        from: [5, 4],
+        to: [6, 4]
       }
     ]
   }
