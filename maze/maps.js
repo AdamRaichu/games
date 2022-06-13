@@ -1,5 +1,6 @@
 var LEVEL_MAPS = {
   map1: {
+    mapName: "map1",
     text: "Welcome to my maze game!\nUse this map to get used to the controls. You can use the arrow keys, the WASD keys, or the direction buttons above to control your character. When you're ready to move on, move to the 🏆 sign to complete the level.",
     matrix: [
       ["1", "1", "1", "1", "1", "1", "1", "1"],
@@ -16,6 +17,7 @@ var LEVEL_MAPS = {
     portals: []
   },
   map2: {
+    mapName: "map2",
     text: "A simple map to test your capabilities.",
     matrix: [
       ["1", "1", "1", "b", "b", "1", "1", "1"],
@@ -29,6 +31,7 @@ var LEVEL_MAPS = {
     portals: []
   },
   map3: {
+    mapName: "map3",
     text: "Some mazes will have locked doors. Collect keys to unlock them.",
     matrix: [
       ["1", "1", "1", "1", "b", "1", "1", "1"],
@@ -42,6 +45,7 @@ var LEVEL_MAPS = {
     portals: []
   },
   map4: {
+    mapName: "map4",
     text: "Some levels will have portals which teleport you to other locations on the map.",
     matrix: [
       ["1", "1", "1", "1", "1", "1", "1", "1"],
@@ -64,6 +68,7 @@ var LEVEL_MAPS = {
     ]
   },
   map5: {
+    mapName: "map5",
     text: "You may need to go back and forth between portals to get everything you need. Be careful though, not all portals lead to where you might expect.",
     matrix: [
       ["1", "1", "1", "1", "1", "1", "1", "1", "1"],

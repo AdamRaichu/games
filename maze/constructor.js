@@ -1,4 +1,5 @@
-var MAP = function (matrix, targetEl, portals) {
+var MAP = function (mapName, matrix, targetEl, portals) {
+  this.mapName = mapName
   this.map = matrix;
   this.target = targetEl;
   this.portals = portals;

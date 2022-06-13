@@ -12,6 +12,10 @@ function movePlayer(event) {
   player.move(directions[event.key]);
 }
 
+function retry() {
+
+}
+
 function paramsToObject(entries) {
   const result = {};
   for (const [key, value] of entries) { // each 'entry' is a [key, value] tupple
