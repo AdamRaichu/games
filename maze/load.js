@@ -1,6 +1,6 @@
 function loadMap(mapObject) {
   document.getElementById("d").innerHTML = mapObject.text;
-  window.player = new PLAYER(new MAP(mapObject.matrix, document.getElementById("target"), mapObject.portals), mapObject.x, mapObject.y);
+  window.player = new PLAYER(new MAP(mapObject.mapName, mapObject.matrix, document.getElementById("target"), mapObject.portals), mapObject.x, mapObject.y);
   player.map.generate();
 
   document.addEventListener("keydown", movePlayer);
