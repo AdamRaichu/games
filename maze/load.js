@@ -13,7 +13,7 @@ function movePlayer(event) {
 }
 
 function retry() {
-  loadMap(JSON.parse(LEVEL_MAPS)[player.map.mapName])
+  loadMap(JSON.parse(_LEVEL_MAPS)[player.map.mapName])
 }
 
 function paramsToObject(entries) {
