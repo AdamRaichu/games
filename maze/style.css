@@ -30,10 +30,12 @@ td {
   font-size: 14px;
 }
 
+div#status_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 div#status {
-  position: absolute;
-  top: 5px;
-  left: 5px;
   width: 100px;
   background-color: #30353d;
 }
