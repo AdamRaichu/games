@@ -13,7 +13,7 @@ function movePlayer(event) {
 }
 
 function retry() {
-
+  loadMap(JSON.parse(LEVEL_MAPS)[player.map.mapName])
 }
 
 function paramsToObject(entries) {
@@ -24,8 +24,8 @@ function paramsToObject(entries) {
   return result;
 }
 
-var mapObject = LEVEL_MAPS[paramsToObject(new URLSearchParams(location.search.substring(1))).map];
-if (mapObject === undefined) {
-  mapObject = LEVEL_MAPS.map1;
+var defaultMap = LEVEL_MAPS[paramsToObject(new URLSearchParams(location.search.substring(1))).map];
+if (defaultMap === undefined) {
+  defaultMap = LEVEL_MAPS.map1;
 }
-loadMap(mapObject);
+loadMap(defaultMap);
