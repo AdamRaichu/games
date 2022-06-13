@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- About the page -->
@@ -40,19 +40,17 @@
     <button onclick="retry()">retry</button>
   </div>
   <div id="victory">
-    <div id="victory">
-      <h1>You Win!</h1>
-      <label for="map">Pick a level. </label>
-      <select name="map">
-        <option value="map1">Level 1: Intro</option>
-        <option value="map2">Level 2: Simple</option>
-        <option value="map3">Level 3: Doors</option>
-        <option value="map4">Level 4: Portals</option>
-        <option value="map5">Level 5: Doors AND Portals</option>
-        <option value="map6">Level 6: One-Way Portals</option>
-      </select>
-      <button onclick="loadMap(LEVEL_MAPS[this.parentElement.children[2].value])">Play</button>
-    </div>
+    <h1>You Win!</h1>
+    <label for="map">Pick a level. </label>
+    <select name="map" id="map">
+      <option value="map1">Level 1: Intro</option>
+      <option value="map2">Level 2: Simple</option>
+      <option value="map3">Level 3: Doors</option>
+      <option value="map4">Level 4: Portals</option>
+      <option value="map5">Level 5: Doors AND Portals</option>
+      <option value="map6">Level 6: One-Way Portals</option>
+    </select>
+    <button onclick="loadMap(LEVEL_MAPS[this.parentElement.children[2].value])">Play</button>
   </div>
   <script src="load.js"></script>
 </body>

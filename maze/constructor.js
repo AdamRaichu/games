@@ -30,6 +30,10 @@ MAP.prototype.generate = function () {
         e.innerText = "🗝️";
       } else if (e.innerText === "p") {
         e.innerText = "🌀";
+      } else if (e.innerText === "l") {
+        e.innerText = "🪜"
+      } else if (e.innerText === "h") {
+        e.innerText = "🕳️"
       }
     }
   }
