@@ -100,7 +100,7 @@ var LEVEL_MAPS = {
   },
   map6: {
     mapName: "map6",
-    text: "Some portals are only one way. There is no way to tell them apart from regular portals. And not all doors are helpful....\nUse the retry button below if you get stuck.",
+    text: "Some portals are only one way. There is no way to tell them apart from regular portals.\nUse the retry button below if you get stuck.\n<details><summary>Hint</summary><p>You don't need to open every door to win the level.</p></details>",
     matrix: [
       ["1", "1", "1", "1", "1", "1", "1", "1"],
       ["1", "0", "0", "0", "0", "0", "0", "1"],
