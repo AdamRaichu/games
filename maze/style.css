@@ -5,7 +5,7 @@ body {
 }
 
 div#main {
-  min-height: calc(100vh - 116px);
+  min-height: calc(100vh - 216px);
 }
 
 #buttons {
@@ -58,7 +58,7 @@ img.key {
 }
 
 div#victory {
-  min-height: calc(100vh - 116px);
+  min-height: calc(100vh - 216px);
 }
 
 #victory h1 {
@@ -71,6 +71,7 @@ div#footer {
   justify-content: space-around;
   align-items: flex-end;
   background-color: #0d1117;
+  margin-top: 100px;
 }
 
 #footer button {
