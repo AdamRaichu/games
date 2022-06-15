@@ -31,9 +31,11 @@ MAP.prototype.generate = function () {
       } else if (e.innerText === "p") {
         e.innerText = "🌀";
       } else if (e.innerText === "l") {
-        e.innerText = "🪜"
+        e.innerText = "🪜";
       } else if (e.innerText === "h") {
-        e.innerText = "🕳️"
+        e.innerText = "🕳️";
+      } else if (e.innerText === "i") {
+        e.innerText = "";
       }
     }
   }
@@ -71,7 +73,7 @@ PLAYER.prototype.move = function (dir) {
     this.deltaY = 0;
   }
 
-  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "1") {
+  if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "1" && this.map.get(this.x + this.deltaX, this.y + this.deltaY) !== "i") {
     if (this.map.get(this.x + this.deltaX, this.y + this.deltaY) === "||") {
       if (this.keys !== 0) {
         document.getElementById("keys").lastElementChild.remove();
@@ -81,7 +83,7 @@ PLAYER.prototype.move = function (dir) {
       }
     } else {
       this.x += this.deltaX;
-      this.y += this.deltaY
+      this.y += this.deltaY;
     }
   }
 
