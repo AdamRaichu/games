@@ -1,14 +1,12 @@
-module.exports = function () {
-  const fs = require("fs");
+const fs = require("fs");
 
-  fs.readFile("/maze/maps.js", (err, buff) => {
-    if (err) {
-      console.error("[!!! ----- validation.js failed ----- !!!]");
-      console.error(err);
-      return;
-    }
+fs.readFile("/maze/maps.js", (err, buff) => {
+  if (err) {
+    console.error("[!!! ----- validation.js failed ----- !!!]");
+    console.error(err);
+    return;
+  }
 
-    var content = buff.toString();
-    console.log(content);
-  })
-}
+  var content = buff.toString();
+  console.log(content);
+})
