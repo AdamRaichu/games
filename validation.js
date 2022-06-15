@@ -1,7 +1,7 @@
 module.exports = function () {
   const fs = require("fs");
 
-  fs.readFile("/maze/maps.js", (err, buff) => {
+  fs.readFile("maze/maps.js", (err, buff) => {
     if (err) {
       console.error("[!!! ----- validation.js failed ----- !!!]");
       console.error(err);
