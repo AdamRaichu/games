@@ -14,4 +14,8 @@ jobs:
       with:
         node-version: 16
     - name: run validation.js
-      run: node validation.js
+      uses: actions/github-script@v6
+      with:
+        script: |
+          var validate = require("./validation.js");
+          validate();
