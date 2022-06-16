@@ -18,4 +18,8 @@ jobs:
       with:
         script: |
           var validate = require("./validation.js");
-          validate();
+          if(validate();) {
+            core.notice("LEVEL_MAPS appears to be valid.")
+          } else {
+            core.error("LEVEL_MAPS is not valid according to validation.js")
+          }
