@@ -25,12 +25,37 @@ jobs:
             core.notice("LEVEL_MAPS appears to be valid.")
             core.setOutput("isValid", "passing")
           } else {
+            core.setOutput("isValid", "failing")
             core.error("LEVEL_MAPS is not valid according to validation.js")
           }
   report:
     if: github.event.head_commit.message != 'VALIDATION'
+    name: report changes
     runs-on: ubuntu-latest
     needs: validate
     steps:
-      - name: test outputs of previous job
-        run: echo ${{needs.validate.outputs.isValid}}
+    - name: import GitHub actions checkout
+      uses: actions/checkout@v3
+    - name: import Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: update isValid.txt
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const content = '${{needs.validate.outputs.isValid}}';
+          try {
+            fs.writeFileSync('isValid.txt', content);
+          } catch (err) {
+           console.error(err);
+          }
+    - name: commit changes
+      run: |
+        git pull
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "VALIDATION"
+        git push
