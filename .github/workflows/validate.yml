@@ -47,7 +47,7 @@ jobs:
           const fs = require('fs');
           const content = '${{needs.validate.outputs.isValid}}';
           try {
-            fs.writeFileSync('isValid.txt', content);
+            fs.writeFileSync('maze/isValid.txt', content);
           } catch (err) {
            console.error(err);
           }
