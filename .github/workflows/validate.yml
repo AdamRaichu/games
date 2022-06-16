@@ -51,9 +51,10 @@ jobs:
           } catch (err) {
            console.error(err);
           }
+    - name: update lastUpdated.txt
+      run: date > lastUpdated.txt
     - name: commit changes
       run: |
-        date > lastUpdated.txt
         git pull
         git config user.name github-actions
         git config user.email github-actions@github.com
