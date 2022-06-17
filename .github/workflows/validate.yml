@@ -4,7 +4,7 @@ on:
   push:
 jobs:
   validate:
-    name: Use node to run validation.js.
+    name: run validation.js
     runs-on: ubuntu-latest
     outputs:
       isValid: ${{ steps.validate.outputs.isValid }}
@@ -45,13 +45,13 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const fs = require('fs')
-          const content = `${{needs.validate.outputs.isValid}}`
-          console.debug(content)
+          const fs = require('fs');
+          const content = `${{needs.validate.outputs.isValid}}`;
+          console.debug(content);
           try {
-            fs.writeFileSync('/maze/isValid.json', content)
+            fs.writeFileSync('maze/isValid.json', content);
           } catch (err) {
-           console.error(err)
+           console.error(err);
           }
     - name: update lastUpdated.txt
       run: date > lastUpdated.txt
