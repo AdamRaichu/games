@@ -73,7 +73,7 @@ function createPopup(HTML, options) {
 }
 
 $.getJSON("isValid.json", function (data) {
-  console.log("LEVEL_MAPS validation status: " + data);
+  console.log("LEVEL_MAPS validation status:\n" + JSON.stringify(data, null, 2));
   if (!data.isValid) {
     var h = `
       <h1>Warning!</h1>
