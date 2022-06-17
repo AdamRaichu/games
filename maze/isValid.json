@@ -1,4 +1,4 @@
 {
-  "isValid": true,
-  "reason": "All checks passed."
+  "isValid": false,
+  "reason": "LEVEL_MAPS["map2"].matrix[2].length DOES NOT equal LEVEL_MAPS["map2"].matrix[2].length. In other words, one of the maps has rows of inequal length."
 }
