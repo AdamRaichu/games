@@ -52,7 +52,7 @@ function createPopup(HTML, options) {
   popup.innerHTML = HTML;
   if (typeof options.popup === "object") {
     if (typeof options.popup.color === "string") {
-
+      popup.style.backgroundColor = options.popup.color
     }
   }
   wrapper.appendChild(popup);
