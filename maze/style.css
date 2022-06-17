@@ -86,4 +86,6 @@ pre {
   padding: 10px;
   border-radius: 5px;
   border-left: 5px solid black;
+  display: flex;
+  overflow: auto;
 }
