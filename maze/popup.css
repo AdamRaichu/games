@@ -23,6 +23,7 @@
 
 .popup {
   background-color: white;
+  color: black;
   width: 50vw;
   height: 50vh;
   border-radius: 25px;
@@ -30,6 +31,7 @@
   justify-content: flex-start;
   flex-direction: column;
   padding: 15px;
+  text-align: left;
 }
 
 .popup-dismiss {
