@@ -23,11 +23,11 @@ jobs:
           const validate = require("./validation.js");
           var output = validate();
           if(output.isValid) {
-            core.notice("LEVEL_MAPS appears to be valid.")
+            core.notice("LEVEL_MAPS and index.html appear to be valid.")
             core.setOutput("isValid", JSON.stringify(output, null, 2))
           } else {
             core.setOutput("isValid", JSON.stringify(output, null, 2))
-            core.error("LEVEL_MAPS is not valid according to validation.js")
+            core.error("${output.file} is not valid according to validation.js")
           }
   report:
     if: github.event.head_commit.message != 'VALIDATION'
