@@ -20,7 +20,7 @@ module.exports = function () {
       console.error(`LEVEL_MAPS["${keys[c]}"].mapName DOES NOT equal "${keys[c]}"`);
       return {
         isValid: false,
-        reason: `LEVEL_MAPS["${keys[c]}"].mapName DOES NOT equal "${keys[c]}". In other words, I forgot to change an important value while copy-pasting.`
+        reason: `LEVEL_MAPS['${keys[c]}'].mapName DOES NOT equal '${keys[c]}'. In other words, I forgot to change an important value while copy-pasting.`
       };
     } else {
       console.debug(`LEVEL_MAPS["${keys[c]}"].mapName does equal "${keys[c]}"`)
@@ -31,7 +31,7 @@ module.exports = function () {
         console.error(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length`)
         return {
           isValid: false,
-          reason: `LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length. In other words, one of the maps has rows of inequal length.`
+          reason: `LEVEL_MAPS['${keys[c]}'].matrix[${c2}].length DOES NOT equal LEVEL_MAPS['${keys[c]}'].matrix[${c2}].length. In other words, one of the maps has rows of inequal length.`
         };
       } else {
         console.debug(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length does equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`)
