@@ -28,10 +28,10 @@ module.exports = function () {
 
     for (var c2 = 1; c2 < o.matrix.length; c2++) {
       if (o.matrix[c2].length !== o.matrix[c2 - 1].length) {
-        console.error(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length`)
+        console.error(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`)
         return {
           isValid: false,
-          reason: `LEVEL_MAPS['${keys[c]}'].matrix[${c2}].length DOES NOT equal LEVEL_MAPS['${keys[c]}'].matrix[${c2}].length. In other words, one of the maps has rows of inequal length.`
+          reason: `LEVEL_MAPS['${keys[c]}'].matrix[${c2}].length DOES NOT equal LEVEL_MAPS['${keys[c]}'].matrix[${c2 - 1}].length. In other words, one of the maps has rows of inequal length.`
         };
       } else {
         console.debug(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length does equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`)
