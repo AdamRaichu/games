@@ -79,9 +79,7 @@ $.getJSON("isValid.json", function (data) {
       <h1>Warning!</h1>
       <p>According to automated checks, there is a problem with the code behind this game. Here is the information passed from the validation software:</p>
       <pre>
-        <code>
-          ${JSON.stringify(data, null, 2)}
-        </code>
+        <code>${JSON.stringify(data, null, 2)}</code>
       </pre>
     `;
     createPopup(h, {});
