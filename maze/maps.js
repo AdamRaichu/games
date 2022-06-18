@@ -140,6 +140,23 @@ var LEVEL_MAPS = {
     x: 1,
     y: 1,
     portals: []
+  },
+  map8: {
+    mapName: "map8",
+    text: "You only have one key. You will probably need to <button onclick='retry()'>retry</button> this level several times.",
+    matrix: [
+      ["1", "1", "1", "1", "1", "1", "1", "1"],
+      ["1", "0", "i", "0", "i", "0", "0", "1"],
+      ["1", "k", "0", "0", "||", "0", "i", "1"],
+      ["1", "0", "i", "i", "i", "0", "0", "1"],
+      ["1", "0", "||", "0", "i", "i", "||", "1"],
+      ["1", "0", "i", "0", "0", "0", "i", "1"],
+      ["1", "0", "||", "i", "i", "0", "@", "1"],
+      ["1", "1", "1", "1", "1", "1", "1", "1"]
+    ],
+    x: 1,
+    y: 1,
+    portals: []
   }
 };
 
