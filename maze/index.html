@@ -17,7 +17,7 @@
   <script src="maps.js"></script>
   <script src="constructor.js"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="popup.css">
+  <link rel="preload" href="popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 
 <body>
@@ -57,10 +57,22 @@
     <button onclick="loadMap(LEVEL_MAPS[this.parentElement.children[2].value])">Play</button>
   </div>
   <div id="footer">
-    <button data-link="/games/bug">Report
-      a problem</button>
-    <button data-link="/games/feedback">Make
-      a suggestion</button>
+    <button data-html='
+      <h1>Report a problem</h1>
+      <div style="text-align: center;">
+        <h3>Do you have a GitHub account?</h3>
+        <button style="background-color: lawngreen;" onclick="location.href = `https://github.com/AdamRaichu/games/issues/new?assignees=AdamRaichu&labels=bug&template=bug_report.md&title=%5BBUG%5D%3A+`">Yes</button>
+        <button style="background-color: red;" onclick="location.href = `https://forms.gle/2BAxdEvUE2iWE3kc6`">No</button>
+      </div>
+    '>Report a problem</button>
+    <button data-html='
+      <h1>Make a suggestion</h1>
+      <div style="text-align: center;">
+        <h3>Do you have a GitHub account?</h3>
+        <button style="background-color: lawngreen;" onclick="location.href = `https://github.com/AdamRaichu/games/issues/new?assignees=AdamRaichu&labels=enhancement&template=feature_request.md&title=%5BREQUEST%5D%3A+`">Yes</button>
+        <button style="background-color: red;" onclick="location.href = `https://forms.gle/2BAxdEvUE2iWE3kc6`">No</button>
+      </div>
+    '>Make a suggestion</button>
   </div>
   <script src="load.js"></script>
   <script src="footer.js"></script>
