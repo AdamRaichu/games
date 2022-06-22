@@ -14,7 +14,8 @@ var LEVEL_MAPS = {
     ],
     x: 1,
     y: 1,
-    portals: []
+    portals: [],
+    ladders: []
   },
   map2: {
     mapName: "map2",
@@ -28,7 +29,8 @@ var LEVEL_MAPS = {
     ],
     x: 1,
     y: 1,
-    portals: []
+    portals: [],
+    ladders: []
   },
   map3: {
     mapName: "map3",
@@ -42,7 +44,8 @@ var LEVEL_MAPS = {
     ],
     x: 1,
     y: 1,
-    portals: []
+    portals: [],
+    ladders: []
   },
   map4: {
     mapName: "map4",
@@ -65,7 +68,8 @@ var LEVEL_MAPS = {
         from: [1, 3],
         to: [3, 1]
       }
-    ]
+    ],
+    ladders: []
   },
   map5: {
     mapName: "map5",
@@ -96,7 +100,8 @@ var LEVEL_MAPS = {
         from: [4, 3],
         to: [1, 1]
       }
-    ]
+    ],
+    ladders: []
   },
   map6: {
     mapName: "map6",
@@ -122,7 +127,8 @@ var LEVEL_MAPS = {
         from: [5, 4],
         to: [6, 4]
       }
-    ]
+    ],
+    ladders: []
   },
   map7: {
     mapName: "map7",
@@ -139,7 +145,8 @@ var LEVEL_MAPS = {
     ],
     x: 1,
     y: 1,
-    portals: []
+    portals: [],
+    ladders: []
   },
   map8: {
     mapName: "map8",
@@ -156,7 +163,72 @@ var LEVEL_MAPS = {
     ],
     x: 1,
     y: 1,
-    portals: []
+    portals: [],
+    ladders: []
+  },
+  map9: {
+    mapName: "map9",
+    text: "Ladders lead to previously levels of the maze.",
+    matrix: [
+      ["1", "1", "1", "b", "1", "1", "1"],
+      ["1", "0", "1", "b", "1", "@", "1"],
+      ["1", "0", "1", "1", "1", "0", "1"],
+      ["1", "0", "l", "1", "l", "0", "1"],
+      ["1", "1", "1", "1", "1", "1", "1"]
+    ],
+    x: 1,
+    y: 1,
+    portals: [],
+    ladders: [
+      {
+        pos: [2, 3],
+        target: {
+          name: "map9_1",
+          x: 1,
+          y: 3
+        }
+      },
+      {
+        pos: [4, 3],
+        target: {
+          name: "map9_1",
+          x: 5,
+          y: 3
+        }
+      }
+    ]
+  },
+  map9_1: {
+    mapName: "map9_1",
+    text: "You have discovered another level of the maze!",
+    matrix: [
+      ["1", "1", "1", "b", "1", "1", "1"],
+      ["1", "0", "0", "0", "0", "0", "1"],
+      ["1", "0", "1", "1", "1", "0", "1"],
+      ["1", "0", "l", "1", "l", "0", "1"],
+      ["1", "1", "1", "1", "1", "1", "1"]
+    ],
+    x: 1,
+    y: 3,
+    portals: [],
+    ladders: [
+      {
+        pos: [2, 3],
+        target: {
+          name: "map9",
+          x: 1,
+          y: 3
+        }
+      },
+      {
+        pos: [4, 3],
+        target: {
+          name: "map9",
+          x: 5,
+          y: 3
+        }
+      }
+    ]
   }
 };
 

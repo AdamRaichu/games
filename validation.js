@@ -63,18 +63,6 @@ module.exports = function () {
     }
   }
 
-  if (INDEX.match(/<\/option>/g).length === Object.keys(LEVEL_MAPS).length) {
-    console.debug("There are as many <option> elements as there are keys under LEVEL_MAPS.");
-  } else {
-    console.error("The number of <option> elements DOES NOT equal the number of keys under LEVEL_MAPS.")
-    return {
-      isValid: false,
-      file: "index.html",
-      reason: "The number of <option> elements does not match the number of keys under LEVEL_MAPS."
-    }
-  }
-
-
   return {
     isValid: true,
     file: "validation.js",

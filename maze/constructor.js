@@ -1,8 +1,9 @@
-var MAP = function (mapName, matrix, targetEl, portals) {
+var MAP = function (mapName, matrix, targetEl, portals, ladders) {
   this.mapName = mapName
   this.map = matrix;
   this.target = targetEl;
   this.portals = portals;
+  this.ladders = ladders;
 };
 MAP.prototype.get = function (x, y) {
   return this.map[y][x];
@@ -32,8 +33,6 @@ MAP.prototype.generate = function () {
         e.innerText = "🌀";
       } else if (e.innerText === "l") {
         e.innerText = "🪜";
-      } else if (e.innerText === "h") {
-        e.innerText = "🕳️";
       } else if (e.innerText === "i") {
         e.innerText = "";
       }
@@ -99,6 +98,17 @@ PLAYER.prototype.move = function (dir) {
       if (this.map.portals[c3].from[0] === this.x && this.map.portals[c3].from[1] === this.y) {
         this.x = this.map.portals[c3].to[0];
         this.y = this.map.portals[c3].to[1];
+      }
+    }
+  }
+
+  if (this.map.get(this.x, this.y) === "l") {
+    for (var c5 = 0; c5 < this.map.ladders.length; c5++) {
+      if (this.map.ladders[c5].pos[0] === this.x && this.map.ladders[c5].pos[1] === this.y) {
+        var m = LEVEL_MAPS[this.map.ladders[c5].target.name];
+        m.x = this.map.ladders[c5].target.x;
+        m.y = this.map.ladders[c5].target.y;
+        loadMap(m);
       }
     }
   }
