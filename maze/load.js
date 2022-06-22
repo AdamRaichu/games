@@ -78,7 +78,7 @@ $.getJSON("isValid.json", function (data) {
     var h = `
       <h1>Warning!</h1>
       <p>According to automated checks, there is a problem with the code behind this game. Here is the information passed from the validation software:</p>
-      <pre>
+      <pre class="hljs">
         <code>${hljs.highlight(JSON.stringify(data, null, 2), {
       language: "json"
     }).value}</code>
