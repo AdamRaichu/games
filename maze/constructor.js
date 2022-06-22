@@ -109,6 +109,7 @@ PLAYER.prototype.move = function (dir) {
         m.x = this.map.ladders[c5].target.x;
         m.y = this.map.ladders[c5].target.y;
         loadMap(m);
+        player.map.generate();
       }
     }
   }
