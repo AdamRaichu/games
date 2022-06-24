@@ -168,7 +168,7 @@ var LEVEL_MAPS = {
   },
   map9: {
     mapName: "map9",
-    text: "Ladders lead to previously levels of the maze.",
+    text: "Ladders lead to previously hidden levels of the maze.",
     matrix: [
       ["1", "1", "1", "b", "1", "1", "1"],
       ["1", "0", "1", "b", "1", "@", "1"],
