@@ -26,26 +26,26 @@ var card = {
     }
     return card.sort[m];
   }
-}
+};
 
 function DECK() {
   this.deck = [];
-  for (c1 = 0; c1 < card.suits.length; c1++) {
-    for (c2 = 0; c2 < card.values.length; c2++) {
-      this.deck.push(`${card.values[c2]}${card.suits[c1]}`)
+  for (var c1 = 0; c1 < card.suits.length; c1++) {
+    for (var c2 = 0; c2 < card.values.length; c2++) {
+      this.deck.push(`${card.values[c2]}${card.suits[c1]}`);
     }
   }
 }
 
 DECK.prototype.shuffle = function () {
   var d = [];
-  for (c3 = this.deck.length - 1; c3 > -1; c3--) {
+  for (var c3 = this.deck.length - 1; c3 > -1; c3--) {
     var i = AR.randBetween(0, c3);
     d.push(this.deck[i]);
     this.deck.splice(i, 1);
   }
   this.deck = d;
-}
+};
 
 var pile = [];
 
@@ -79,22 +79,22 @@ function turn() {
     console.log("WAR");
     // Make sure neither player has run out of cards.
     pile.push(bot.hand.pop());
-    pile.push(player.hand.pop())
+    pile.push(player.hand.pop());
     if (checkForShuffle()) {
       gameOver();
-      return // Someone ran out of cards.
+      return; // Someone ran out of cards.
     }
     pile.push(bot.hand.pop());
-    pile.push(player.hand.pop())
+    pile.push(player.hand.pop());
     if (checkForShuffle()) {
       gameOver();
-      return
+      return;
     }
     pile.push(bot.hand.pop());
-    pile.push(player.hand.pop())
+    pile.push(player.hand.pop());
     if (checkForShuffle()) {
       gameOver();
-      return
+      return;
     }
     turn();
   } else {
@@ -127,7 +127,7 @@ function checkForShuffle() {
   // This functions makes sure that for wars the players actually have cards to play.
   if (bot.hand.length === 0) {
     if (bot.discard.deck.length === 0) {
-      return true
+      return true;
     } else {
       bot.discard.shuffle();
       bot.hand = bot.discard.deck;
@@ -136,14 +136,14 @@ function checkForShuffle() {
   }
   if (player.hand.length === 0) {
     if (player.discard.deck.length === 0) {
-      return true
+      return true;
     } else {
       player.discard.shuffle();
       player.hand = bot.discard.deck;
       player.discard.deck = [];
     }
   }
-  return false
+  return false;
 }
 
 
@@ -153,11 +153,11 @@ d.shuffle();
 var bot = {
   discard: new DECK(),
   hand: []
-}
+};
 var player = {
   discard: new DECK(),
   hand: []
-}
+};
 
 bot.discard.deck = [];
 bot.hand = d.deck.splice(26);
@@ -165,5 +165,5 @@ player.discard.deck = [];
 player.hand = d.deck.splice(0);
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("turn1").addEventListener("click", turn)
-}) 
+  document.getElementById("turn1").addEventListener("click", turn);
+});
