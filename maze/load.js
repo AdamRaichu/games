@@ -13,7 +13,8 @@ function movePlayer(event) {
 }
 
 function retry() {
-  loadMap(JSON.parse(_LEVEL_MAPS)[player.map.mapName])
+  document.getElementById('keys').innerHTML = "";
+  loadMap(JSON.parse(_LEVEL_MAPS)[player.map.mapName]);
 }
 
 function paramsToObject(entries) {
