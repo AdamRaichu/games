@@ -164,4 +164,6 @@ bot.hand = d.deck.splice(26);
 player.discard.deck = [];
 player.hand = d.deck.splice(0);
 
-document.getElementById("turn1").addEventListener("click", turn)
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("turn1").addEventListener("click", turn)
+}) 
