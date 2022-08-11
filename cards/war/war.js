@@ -119,7 +119,7 @@ var stats = {
 
 function gameOver() {
   console.log("Game over.");
-  document.getElementById("turn").remove();
+  document.getElementById("turn1").remove();
   alert(`Game over\n\nSomeone wins.`);
 }
 
