@@ -1,7 +1,6 @@
 name: Validate maps.js
 on: 
   workflow_dispatch:
-  push:
 jobs:
   validate:
     name: run validation.js
