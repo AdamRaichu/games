@@ -42,6 +42,7 @@ MAP.prototype.generate = function () {
 };
 
 var PLAYER = function (map, xPos, yPos) {
+  fName = "new PLAYER"
   this.map = map;
   this.x = xPos;
   this.y = yPos;
@@ -114,6 +115,7 @@ PLAYER.prototype.move = function (dir) {
   }
 
   this.map.map[this.y][this.x] = "*";
+  fName = "PLAYER.move"
   console.debug(this.map.map.join("\n"));
   this.map.generate();
 };
