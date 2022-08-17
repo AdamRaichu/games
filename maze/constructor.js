@@ -115,8 +115,8 @@ PLAYER.prototype.move = function (dir) {
   }
 
   this.map.map[this.y][this.x] = "*";
-  fName = "PLAYER.move"
-  console.debug(this.map.map.join("\n"));
+  fName = "PLAYER.move";
+  console.debug("\n" + this.map.map.join("\n"));
   this.map.generate();
 };
 
