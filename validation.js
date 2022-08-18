@@ -1,6 +1,5 @@
 module.exports = function () {
   const fs = require("fs");
-  const core = require('@actions/core');
 
 
   // maps.js validation
