@@ -30,27 +30,29 @@ module.exports = function () {
         reason: `LEVEL_MAPS['${keys[c]}'].mapName DOES NOT equal '${keys[c]}'. In other words, I forgot to change an important value while copy-pasting.`
       };
     } else {
-      console.debug(`LEVEL_MAPS["${keys[c]}"].mapName does equal "${keys[c]}"`)
+      console.debug(`LEVEL_MAPS["${keys[c]}"].mapName does equal "${keys[c]}"`);
     }
 
+    console.group(`LEVEL_MAPS["${keys[c]}"] length test`);
     for (var c2 = 1; c2 < o.matrix.length; c2++) {
       if (o.matrix[c2].length !== o.matrix[c2 - 1].length) {
-        console.error(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`)
+        console.error(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`);
         return {
           isValid: false,
           file: "maps.js",
           reason: `LEVEL_MAPS['${keys[c]}'].matrix[${c2}].length DOES NOT equal LEVEL_MAPS['${keys[c]}'].matrix[${c2 - 1}].length. In other words, one of the maps has rows of inequal length.`
         };
       } else {
-        console.debug(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length does equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`)
+        console.debug(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length does equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`);
       }
     }
+    console.groupEnd();
   }
 
 
   // index.html validation
   try {
-    var INDEX = fs.readFileSync("maze/index.html", "utf8")
+    var INDEX = fs.readFileSync("maze/index.html", "utf8");
   } catch (err) {
     if (err) {
       console.error("[!!! ----- validation.js failed ----- !!!]");
@@ -66,7 +68,7 @@ module.exports = function () {
   if (INDEX.match(/<\/option>/g).length === Object.keys(LEVEL_MAPS).length) {
     console.debug("There are as many <option> elements as there are keys under LEVEL_MAPS.");
   } else {
-    console.error("The number of <option> elements DOES NOT equal the number of keys under LEVEL_MAPS.")
+    console.error("The number of <option> elements DOES NOT equal the number of keys under LEVEL_MAPS.");
     return {
       isValid: false,
       file: "index.html",
