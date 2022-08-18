@@ -1,5 +1,6 @@
 module.exports = function () {
   const fs = require("fs");
+  const core = require('@actions/core');
 
 
   // maps.js validation
@@ -33,7 +34,7 @@ module.exports = function () {
       console.debug(`LEVEL_MAPS["${keys[c]}"].mapName does equal "${keys[c]}"`);
     }
 
-    console.group(`LEVEL_MAPS["${keys[c]}"] length test`);
+    core.startGroup(`LEVEL_MAPS["${keys[c]}"] length test`);
     for (var c2 = 1; c2 < o.matrix.length; c2++) {
       if (o.matrix[c2].length !== o.matrix[c2 - 1].length) {
         console.error(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length DOES NOT equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`);
@@ -46,7 +47,7 @@ module.exports = function () {
         console.debug(`LEVEL_MAPS["${keys[c]}"].matrix[${c2}].length does equal LEVEL_MAPS["${keys[c]}"].matrix[${c2 - 1}].length`);
       }
     }
-    console.groupEnd();
+    core.endGroup();
   }
 
 
