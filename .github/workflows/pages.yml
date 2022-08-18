@@ -39,6 +39,7 @@ jobs:
       with:
         script: |
           const validate = require("./validation.js");
+          var core;
           var output = validate();
           if(output.isValid) {
             core.notice("LEVEL_MAPS and index.html appear to be valid.")
