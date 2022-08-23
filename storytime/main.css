@@ -27,3 +27,16 @@ body {
   content: "";
   cursor: pointer;
 }
+
+#target-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#target {
+  width: 50vw;
+  background-color: #30353d;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
