@@ -1,0 +1,29 @@
+body {
+  background-color: #1f2227;
+  color: white;
+}
+
+#buttons {
+  text-align: center;
+}
+
+#names-container {
+  margin-top: 30px;
+}
+
+.name {
+  pointer-events: none;
+  cursor: text;
+}
+
+.name::before {
+  pointer-events: all;
+  background-image: url(/images/delete.webp);
+  background-size: 10px 10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  content: "";
+  cursor: pointer;
+}
