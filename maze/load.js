@@ -46,4 +46,23 @@ $.getJSON("isValid.json", function (data) {
     `;
     createPopup(h, {});
   }
-})
+});
+
+fName = "web worker handler"
+if (typeof (Worker) !== "undefined") {
+  var w = new Worker("worker.js");
+  w.onmessage = function (event) {
+    var h = `
+      <h1>Warning!</h1>
+      <p>According to automated checks, there is a problem with the code behind this game. Here is the information passed from the validation software:</p>
+      <pre class="hljs">
+        <code>${hljs.highlight(event.data, {
+      language: "json"
+    }).value}</code>
+      </pre>
+    `;
+    createPopup(h, {});
+  }
+} else {
+  console.log("Web worker not supported");
+}
