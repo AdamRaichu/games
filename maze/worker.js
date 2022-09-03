@@ -1,6 +1,21 @@
-importScripts("https://code.jquery.com/jquery-3.6.0.min.js");
+function loadJSON(path, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        if (success)
+          success(JSON.parse(xhr.responseText));
+      } else {
+        if (error)
+          error(xhr);
+      }
+    }
+  };
+  xhr.open("GET", path, true);
+  xhr.send();
+}
 
-$.getJSON("isValid.json", function (data) {
+loadJSON("isValid.json", function (data) {
   fName = "get isValid.json";
   console.log("\nLEVEL_MAPS validation status:\n" + JSON.stringify(data, null, 2));
   if (!data.isValid) {
