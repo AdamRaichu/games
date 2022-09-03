@@ -62,6 +62,7 @@ if (typeof (Worker) !== "undefined") {
       </pre>
     `;
     createPopup(h, {});
+    w.terminate();
   }
 } else {
   console.log("Web worker not supported");
