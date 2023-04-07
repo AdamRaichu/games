@@ -182,6 +182,24 @@ var LEVEL_MAPS = {
       { from: [6, 7], to: [1, 4] },
     ],
   },
+  map10: {
+    mapName: "map10",
+    text: "This one has invisible walls and doors. Although you have seen this before, this is just a more difficult level.",
+    matrix: [
+      ["1", "1", "1", "1", "1", "1", "1", "1", "1"],
+      ["1", "k", "0", "0", "0", "0", "0", "0", "1"],
+      ["1", "i", "i", "0", "0", "0", "0", "0", "1"],
+      ["1", "0", "0", "i", "1", "1", "1", "1", "1"],
+      ["1", "i", "0", "0", "0", "||", "i", "1", "1"],
+      ["1", "i", "0", "i", "1", "1", "i", "1", "1"],
+      ["1", "1", "0", "i", "0", "0", "0", "0", "1"],
+      ["1", "0", "0", "0", "0", "i", "@", "0", "1"],
+      ["1", "1", "1", "1", "1", "1", "1", "1", "1"],
+    ],
+    x: 4,
+    y: 4,
+    portals: [],
+  }
 };
 
 const _LEVEL_MAPS = JSON.stringify(LEVEL_MAPS);
