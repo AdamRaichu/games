@@ -1,5 +1,5 @@
 {
-  "isValid": false,
-  "file": "index.html",
-  "reason": "The number of <option> elements does not match the number of keys under LEVEL_MAPS."
+  "isValid": true,
+  "file": "validation.js",
+  "reason": "All checks passed."
 }
